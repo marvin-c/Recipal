@@ -1,0 +1,30 @@
+Meeting agenda:
+
+identifying and assigning the following task(according to
+the assessment requirements):
+
+PART A:
+task 1 (Project Goal and Objectives)- darren
+task 2 (Project Scope Statement)- rocelle
+task 3 (Project Development Methodology)- rocelle
+task 4 (Project Technology Stack)- marvin
+
+PART B:
+task 1 (Use Case Diagram)- marvin
+task 2 (Activity Diagram)- darren
+
+PART C:
+task 1 (Wireframes)- darren
+task 2 (User Interface (UI) Mockups)- all
+task 3 (Mockups Evaluation) 
+
+frontend -reactnative
+backend - django
+testing - android studio, expo
+
+requirements:
+-identify how many screens
+-wireframes and; 
+-mockups- dividing screens
+for each member to part take in making
+the mock-up
