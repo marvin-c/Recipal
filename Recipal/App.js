@@ -1,68 +1,86 @@
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView } from 'react-native';
-import { ImageBackground, StyleSheet, Text } from 'react-native';
-import { View } from 'react-native';
+import {
+  StyleSheet,
+  Button,
+  TouchableHighlight,
+  View,
+  SafeAreaView,
+  Text,
+  Alert,
+} from 'react-native';
+import Color from 'color';
 import BackgroundImg from './Components/BackgroundImage';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
+const App = () => (
+  <SafeAreaView style={styles.container}>
+    <View style={styles.BgImgContainer}>
       <BackgroundImg />
-      <View style={styles.textContainer}>
-        <Text style={styles.text}>
-          Recipal
-        </Text>
-      </View>
     </View>
-  );
-}
+    <TouchableHighlight
+      style={styles.button}
+      underlayColor="rgba(255, 200, 0, 0.5)"
+      onPress={() => Alert.alert('Button pressed')}>
+      <Text style={styles.buttonText}>Get started</Text>
+    </TouchableHighlight>
+    <TouchableHighlight 
+    style={styles.button}
+    underlayColor="rgba(255, 200, 0, 0.5)"
+      onPress={() => Alert.alert('Button pressed')}>
+      <Text style={styles.buttonText}>Login</Text>
+    </TouchableHighlight>
+    <TouchableHighlight 
+    style={styles.button}
+    underlayColor="rgba(255, 200, 0, 0.5)"
+    onPress={() => Alert.alert('Button pressed')}>
+      <Text style={styles.buttonText}>Sign up</Text>
+    </TouchableHighlight>
+  </SafeAreaView>
+);
 
 const styles = StyleSheet.create({
+  //safeAreaView Container
   container: {
     flex: 1,
+    justifyContent: 'center',
+    marginHorizontal: 0,
   },
-  textContainer: {
+  //background Image container
+  BgImgContainer: {
+    flex: 1,
     position: 'absolute',
     top: 0,
     bottom: 0,
     left: 0,
     right: 0,
-    justifyContent: 'center',
-    alignItems: 'center',
+    //justifyContent: 'center',
+    //alignItems: 'center',
   },
-  text: {
+  //button properties
+  button: {
+    backgroundColor: '#FFC800',
+    padding: 7,
+    borderRadius: 20,
+    marginVertical: 12,
+    marginHorizontal: 110,
+    shadowColor: 'black',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8 ,
+    shadowRadius: 2,
+    elevation: 4,
+  },
+  //button text properties
+  buttonText: {
+    color: 'black',
+    fontWeight: 'regular',
+    fontSize: 22,
     textAlign: 'center',
-    textAlignVertical: 'center',
-    fontSize: 24,
-    fontWeight: 'bold',
+    flexDirection: 'row',
+  },
+  //resizes button to text (right and left buttons)
+  fixToText: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
 });
 
-/*
-wexport default function App() {
-  return (
-    <View style={styles.container}>
-      <Text style={[styles.text, { textAlign: 'center', textAnchor: 'middle' }]}>
-      Begin your culinary journey!
-      </Text>
-      <BackgroundImg/>
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    justifyContent: 'center',
-    zIndex: 1, // check parent container zIndex 
-    
-  },
-  text: {
-    textAlignVertical: 'center', // center text vertically
-    fontSize: 24,
-    fontWeight: 'bold',
-    textAlign: 'center',
-
-  },
-});
-//export default App;*/
+export default App;
