@@ -1,50 +1,47 @@
 import React from 'react';
-import {
-  StyleSheet,
-  Button,
-  TouchableHighlight,
-  View,
-  SafeAreaView,
-  Text,
-  Alert,
-} from 'react-native';
+import {StyleSheet,Button,TouchableHighlight,View,SafeAreaView,Text,Alert,} from 'react-native';
 import Color from 'color';
 import BackgroundImg from './Components/BackgroundImage';
 
 const App = () => (
   <SafeAreaView style={styles.container}>
+
     <View style={styles.BgImgContainer}>
       <BackgroundImg />
     </View>
-    <TouchableHighlight
+
+    <TouchableHighlight //button container, 'TouchableHighlight' allowed me to use the borderRadius style tool
       style={styles.button}
-      underlayColor="rgba(255, 200, 0, 0.5)"
-      onPress={() => Alert.alert('Button pressed')}>
-      <Text style={styles.buttonText}>Get started</Text>
+      underlayColor="rgba(255, 200, 0, 0.5)" //Downpress button color and alpha level
+      onPress={() => Alert.alert('Button pressed')}>  
+      <Text style={styles.buttonText}>Get started</Text> 
     </TouchableHighlight>
+
     <TouchableHighlight 
     style={styles.button}
     underlayColor="rgba(255, 200, 0, 0.5)"
       onPress={() => Alert.alert('Button pressed')}>
       <Text style={styles.buttonText}>Login</Text>
     </TouchableHighlight>
+
     <TouchableHighlight 
     style={styles.button}
     underlayColor="rgba(255, 200, 0, 0.5)"
     onPress={() => Alert.alert('Button pressed')}>
       <Text style={styles.buttonText}>Sign up</Text>
     </TouchableHighlight>
+
   </SafeAreaView>
 );
 
 const styles = StyleSheet.create({
-  //safeAreaView Container
+  //safeAreaView Container style properties (android display modifier, ensures objects aren't shown infront of screen cut-outs, etc...)
   container: {
     flex: 1,
     justifyContent: 'center',
     marginHorizontal: 0,
   },
-  //background Image container
+  //background Image container style properties
   BgImgContainer: {
     flex: 1,
     position: 'absolute',
@@ -52,10 +49,8 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    //justifyContent: 'center',
-    //alignItems: 'center',
   },
-  //button properties
+  //button style properties
   button: {
     backgroundColor: '#FFC800',
     padding: 7,
@@ -68,7 +63,7 @@ const styles = StyleSheet.create({
     shadowRadius: 2,
     elevation: 4,
   },
-  //button text properties
+  //button text style properties
   buttonText: {
     color: 'black',
     fontWeight: 'regular',
@@ -76,11 +71,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     flexDirection: 'row',
   },
-  //resizes button to text (right and left buttons)
+  //resizes button to text (not using in this code)
+  /*
   fixToText: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-  },
+  },*/
 });
 
 export default App;
