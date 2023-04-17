@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 import * as Font from 'expo-font';  //font 
 
-const BackgroundImg = () => {
+const LoginBackgroundImg = () => {
   const [fontLoaded, setFontLoaded] = useState(false);
 
   // Load custom font asynchronously
@@ -21,7 +21,7 @@ const BackgroundImg = () => {
     <View>
 
       <ImageBackground
-        source={require('../assets/SplashScreen.png')} //background image file path 
+        source={require('../assets/LoginScreen.png')} //background image file path 
         resizeMode="stretch"  
         style={styles.img}>
 
@@ -33,12 +33,20 @@ const BackgroundImg = () => {
           ) : null}
         </View>
 
+        <View style={styles.text2Container}>
+          {fontLoaded ? ( //text with font applied within a text container. + Font name
+            <Text style={[styles.text, { fontFamily: 'Satisfy-Regular' }]}> 
+              Login
+            </Text>
+          ) : null}
+        </View>
+
       </ImageBackground>
 
     </View>
   );
 };
-export default BackgroundImg;
+export default LoginBackgroundImg;
 
 const styles = StyleSheet.create({
   img: {  //background image style properties
@@ -50,12 +58,18 @@ const styles = StyleSheet.create({
   text: { //Main logo text style properties
     textAlign: 'center',
     textAlignVertical: 'center',
-    fontSize: 86,
+    fontSize: 60,
   },
   textContainer: {  //text container style properties
     flex: 1,
     justifyContent: 'center',
     width: '100%',
-    top: '-20%',
+    top: '-37.5%',
+  },
+  text2Container: {  
+    flex: 1,
+    justifyContent: 'center',
+    width: '100%',
+    top: '-37.5%',
   },
 });
