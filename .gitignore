@@ -1,0 +1,8 @@
+# Django #
+RCPL_BKEND/*.log
+RCPL_BKEND/*.pot
+RCPL_BKEND/*.pyc
+RCPL_BKEND/__pycache__
+RCPL_BKEND/db.sqlite3
+RCPL_BKEND/media
+rcpl_venv
