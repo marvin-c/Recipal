@@ -6,7 +6,9 @@ const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [fontLoaded, setFontLoaded] = useState(false);
-  
+  const handleSignUpPress = () => {navigation.navigate('Signup');}; //call the SignupScreen on button press
+  const handleLogoPress = () => {navigation.navigate('Splash');};//send user back to the splash screen
+
     // Load custom font asynchronouslyc
     useEffect(() => {
       async function loadFont() {//"Try/Catch function to load font before rendering"
@@ -42,9 +44,11 @@ const LoginScreen = ({ navigation }) => {
               <View style={styles.textContainer}>
 
                 {fontLoaded ? ( //Recipal main logo
+                <TouchableOpacity onPress= {handleLogoPress} activeOpacity={1}>
                   <Text style={[styles.text, { fontFamily: 'Satisfy-Regular' }]}> 
                     Recipal
                   </Text>
+                </TouchableOpacity>
                 ) : null}
                 
               </View>
@@ -85,7 +89,7 @@ const LoginScreen = ({ navigation }) => {
                   Don't have an account?
                 </Text>
 
-                <TouchableOpacity onPress={() => Alert.alert('Button pressed')} /*{() => navigation.navigate('SignupScreen')}*/
+                <TouchableOpacity onPress= {handleSignUpPress}
                 >
                   <Text style={[styles.text4, { fontFamily: 'Satisfy-Regular' }]}>
                     Sign up here
@@ -161,18 +165,18 @@ const styles = StyleSheet.create({
     top: '0%',
     fontSize: 40,
   },
-  SupContainer: {  //signup prompt container style properties
+  SupContainer: {  //Login prompt container style properties
     justifyContent: 'center',
     width: '100%',
     top: '0%',
   },
-  text3: { //'Don't have an account?' text style properties
-    left: 30,
+  text3: { //'Already have an account?' text style properties
+    left: '13%',
     top: '0%',
     fontSize: 18,
   },
-  text4: { //'Sign up here' text style properties
-    left: 220,
+  text4: { //'Login here' text style properties
+    left: '57%',
     top: '-100%',
     fontSize: 18,
     color: '#FFC800',

@@ -3,13 +3,15 @@ import { ImageBackground, Button, TouchableOpacity,StyleSheet, SafeAreaView, Scr
 import * as Font from 'expo-font';  //font 
 
 
-const SignUpScreen = () => {
+const SignUpScreen = ({ navigation }) => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const [fontLoaded, setFontLoaded] = useState(false);
+    const handleLoginPress = () => {navigation.navigate('Login');}; //call the loginScreen on button press
+    const handleLogoPress = () => {navigation.navigate('Splash');};//send user back to the splash screen
   
     // Load custom font asynchronouslyc
     useEffect(() => {
@@ -47,22 +49,30 @@ const SignUpScreen = () => {
             resizeMode= 'cover'  
             style={styles.BgImgContainer}>
 
-            {fontLoaded ? ( //Recipal main logo
+            <View style={styles.textContainer}>
+
+            {fontLoaded ? ( //Recipal main logo, Touchable opacity allows for button behaviour, activeOpacity changes the transparency when clicked
+              <TouchableOpacity onPress= {handleLogoPress} activeOpacity={1}> 
                 <Text style={[styles.text, { fontFamily: 'Satisfy-Regular' }]}> 
-                    Recipal
+                  Recipal
                 </Text>
+              </TouchableOpacity>
             ) : null}
-                <Text style={[styles.text2, { fontFamily: 'Satisfy-Regular' }]}>
-                    Sign up 
-                </Text> 
+
+            </View>
 
             <View style={styles.container}>
+              
+              <Text style={[styles.text2, { fontFamily: 'Satisfy-Regular' }]}>
+                  Sign up 
+              </Text> 
+
             {errorMessage ? <Text style={styles.error}>{errorMessage}</Text> : null}
             <TextInput
                 style={styles.input}
                 placeholder="UserName"
                 value={username}
-                onChangeText={(value) => setEmail(value)}
+                onChangeText={(value) => setUsername(value)}
             />
             <TextInput
                 style={styles.input}
@@ -97,7 +107,7 @@ const SignUpScreen = () => {
                   Already have an account?
                 </Text>
 
-                <TouchableOpacity onPress={() => Alert.alert('Button pressed')} /*{() => navigation.navigate('SignupScreen')}*/
+                <TouchableOpacity onPress={handleLoginPress}
                 >
                   <Text style={[styles.text4, { fontFamily: 'Satisfy-Regular' }]}>
                     Login here
@@ -166,11 +176,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     textAlignVertical: 'center',
     fontSize: 60,
-    top: '5%'
+    top: '20%'
   },
   text2: { //signup text style properties
-    left: 25,
-    top: '12%',
+    left: 0,
+    top: '0%',
     fontSize: 40,
   },
   SupContainer: {  //Login prompt container style properties
@@ -179,12 +189,12 @@ const styles = StyleSheet.create({
     top: '0%',
   },
   text3: { //'Already have an account?' text style properties
-    left: 30,
+    left: '13%',
     top: '0%',
     fontSize: 18,
   },
   text4: { //'Login here' text style properties
-    left: 240,
+    left: '62%',
     top: '-100%',
     fontSize: 18,
     color: '#FFC800',
