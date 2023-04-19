@@ -5,6 +5,7 @@ import BackgroundImg from '../Components/BackgroundImage';
 
   const SplashScreen = ({ navigation }) => {
   const handleLoginPress = () => {navigation.navigate('Login');}; //call the loginScreen on button press
+  const handleSignUpPress = () => {navigation.navigate('Signup');}; //call the SignupScreen on button press
   return (
     <SafeAreaView style={styles.container}>
 
@@ -29,7 +30,7 @@ import BackgroundImg from '../Components/BackgroundImage';
       <TouchableHighlight 
         style={styles.button}
         underlayColor="rgba(255, 200, 0, 0.75)"
-        onPress={() => Alert.alert('Button pressed')}>
+        onPress={handleSignUpPress}>
         <Text style={styles.buttonText}>Sign up</Text>
       </TouchableHighlight>
 

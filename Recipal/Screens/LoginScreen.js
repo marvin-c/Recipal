@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ImageBackground, TouchableOpacity,StyleSheet, SafeAreaView, View, Text, TextInput, TouchableHighlight,Alert,KeyboardAvoidingView,} from 'react-native';
+import { ImageBackground, TouchableOpacity,StyleSheet, SafeAreaView, ScrollView, Dimensions, View, Text, TextInput, TouchableHighlight,Alert,KeyboardAvoidingView,} from 'react-native';
 import * as Font from 'expo-font';  //font 
 
 const LoginScreen = ({ navigation }) => {
@@ -32,91 +32,100 @@ const LoginScreen = ({ navigation }) => {
   };
 
   return (
-    <KeyboardAvoidingView behavior="padding" style={styles.container}>
-        <SafeAreaView style={styles.container}>
-          <ImageBackground
+      <SafeAreaView style={styles.container}>
+        
+        <ImageBackground
             source={require('../assets/LoginScreen.png')} //background image file path 
-            resizeMode="stretch"  
-            style={styles.img}>
+            resizeMode= 'cover'  
+            style={styles.BgImgContainer}>
 
-            <View style={styles.textContainer}>
+              <View style={styles.textContainer}>
 
-              {fontLoaded ? (
-                <Text style={[styles.text, { fontFamily: 'Satisfy-Regular' }]}>
-                  Recipal
+                {fontLoaded ? ( //Recipal main logo
+                  <Text style={[styles.text, { fontFamily: 'Satisfy-Regular' }]}> 
+                    Recipal
+                  </Text>
+                ) : null}
+                
+              </View>
+
+              <View style={styles.container}>
+
+                <Text style={[styles.text2, { fontFamily: 'Satisfy-Regular' }]}>
+                  Login 
+                </Text> 
+
+                <TextInput
+                style={styles.input}
+                placeholder="Email"
+                onChangeText={(text) => setEmail(text)}
+                value={email}
+                autoCapitalize="none"
+                autoCompleteType="email"
+                keyboardType="email-address"
+                />
+                <TextInput
+                style={styles.input}
+                placeholder="Password"
+                onChangeText={(text) => setPassword(text)}
+                value={password}
+                secureTextEntry
+                />
+                <TouchableHighlight style={styles.button} 
+                  underlayColor="rgba(255, 200, 0, 0.75)" //Downpress button color and alpha level
+                  onPress={handleLogin}>
+                  <Text style={styles.buttonText}>Log in</Text>
+                </TouchableHighlight>
+
+              </View>
+
+            <View style={styles.SupContainer}>
+
+                <Text style={[styles.text3, { fontFamily: 'Satisfy-Regular' }]}>
+                  Don't have an account?
                 </Text>
-              ) : null}
 
-              <Text style={[styles.text2, { fontFamily: 'Satisfy-Regular' }]}>
-                Login
-              </Text>
-
-              <Text style={[styles.text3, { fontFamily: 'Satisfy-Regular' }]}>
-                Don't have an account?
-              </Text>
-
-              <TouchableOpacity onPress={() => navigation.navigate('SignupScreen')}>
-                <Text style={[styles.text4, { fontFamily: 'Satisfy-Regular' }]}>
-                  Sign up here
-                </Text>
-              </TouchableOpacity>
-
-              <TextInput
-              style={styles.input}
-              placeholder="Email"
-              onChangeText={(text) => setEmail(text)}
-              value={email}
-              autoCapitalize="none"
-              autoCompleteType="email"
-              keyboardType="email-address"
-            />
-
-            <TextInput
-              style={styles.input}
-              placeholder="Password"
-              onChangeText={(text) => setPassword(text)}
-              value={password}
-              secureTextEntry
-            />
-
-            <TouchableHighlight style={styles.button} 
-              underlayColor="rgba(255, 200, 0, 0.75)" //Downpress button color and alpha level
-              onPress={handleLogin}>
-              <Text style={styles.buttonText}>Log in</Text>
-            </TouchableHighlight>
+                <TouchableOpacity onPress={() => Alert.alert('Button pressed')} /*{() => navigation.navigate('SignupScreen')}*/
+                >
+                  <Text style={[styles.text4, { fontFamily: 'Satisfy-Regular' }]}>
+                    Sign up here
+                  </Text>
+                </TouchableOpacity>
 
             </View>
-            
+
           </ImageBackground>
-          </SafeAreaView>
-    </KeyboardAvoidingView>
-    
-  );
-};
+
+      </SafeAreaView>
+    );
+  };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    marginHorizontal: 0,
+    //alignItems: 'center',
+    paddingHorizontal: 20,
   },
   //background Image container style properties
   BgImgContainer: {
-    flex: 1,
     position: 'absolute',
     top: 0,
     bottom: 0,
     left: 0,
     right: 0,
+    marginHorizontal: 0,
+    marginVertical: 0,
   },
   input: {
-    width: '80%',
-    padding: 10,
-    marginBottom: 10,
-    marginHorizontal: '10%',
-    backgroundColor: '#f2f2f2',
+    height: 50,
+    width: '100%',
+    backgroundColor: '#FFFFFF',
+    borderWidth: 1,
+    borderColor: '#ccc',
     borderRadius: 5,
-    top: '18%',
+    paddingHorizontal: 10,
+    marginVertical: 10,
   },
   //button style properties
   button: {
@@ -124,48 +133,47 @@ const styles = StyleSheet.create({
     padding: 7,
     borderRadius: 20,
     marginVertical: 0,
-    marginHorizontal: 110,
+    marginHorizontal: 100,
     shadowColor: 'black',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.8 ,
     shadowRadius: 2,
     elevation: 4,
-    left:'20%',
-    top: '18%',
+    left:'30%',
+    top: '0%',
   },
   //button text style properties
   buttonText: {
     color: 'black',
     fontWeight: 'regular',
-    fontSize: 18,
+    fontSize: 16,
     textAlign: 'center',
     flexDirection: 'row',
-  },
-  img: {  //background image style properties
-    height: '100%',
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   text: { //Main logo text style properties
     textAlign: 'center',
     textAlignVertical: 'center',
     fontSize: 60,
-    top: '5%'
+    top: '25%'
   },
   text2: { //Login text style properties
-    left: 40,
-    top: '25%',
+    left: 0,
+    top: '0%',
     fontSize: 40,
+  },
+  SupContainer: {  //signup prompt container style properties
+    justifyContent: 'center',
+    width: '100%',
+    top: '0%',
   },
   text3: { //'Don't have an account?' text style properties
     left: 30,
-    top: '67.5%',
+    top: '0%',
     fontSize: 18,
   },
   text4: { //'Sign up here' text style properties
     left: 220,
-    top: '1595%',
+    top: '-100%',
     fontSize: 18,
     color: '#FFC800',
     textShadowColor: '#b37700',
@@ -173,13 +181,6 @@ const styles = StyleSheet.create({
     textShadowRadius: 2,
     //textDecorationLine: 'underline',
   },
-  textContainer: {  //text container style properties
-    flex: 1,
-    justifyContent: 'center',
-    width: '100%',
-    top: '-25%',
-  },
 });
 
 export default LoginScreen;
-
