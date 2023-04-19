@@ -1,0 +1,23 @@
+ 
+- python -m venv /PATH/NAME    --create virtual environment
+- source /path/bin/activate    --activate virtual environment
+
+
+install expo go, android-studio, android-sdk
+
+- npx create-expo-app events-app    --create app
+- npx expo start                  -- start the app
+
+
+
+django backend
+
+-source path/bin/activate     --activate venv
+-django-admin startproject [PROJECTNAME]     --creaate project
+-cd to project folder
+-python -m pip install django   --install django
+-python manage.py startapp [APPNAME]     --create app
+-python manage.py migrate             --migrate database
+-python manage.py createsuperuser     --create super user for database
+-pip install djangorestframework pillow
+-npx expo install expo-barcode-scanner
