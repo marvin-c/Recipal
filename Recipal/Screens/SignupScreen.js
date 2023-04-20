@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { ImageBackground, Button, TouchableOpacity,StyleSheet, SafeAreaView, ScrollView, Dimensions, View, Text, TextInput, TouchableHighlight,Alert,KeyboardAvoidingView,} from 'react-native';
 import * as Font from 'expo-font';  //font 
 import { FontAwesome, Feather } from 'react-native-vector-icons';
-import { MaterialIcons } from '@expo/vector-icons';
 
 
 const SignUpScreen = ({ navigation }) => {

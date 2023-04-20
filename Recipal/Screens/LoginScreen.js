@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ImageBackground, TouchableOpacity,StyleSheet, SafeAreaView, ScrollView, Dimensions, View, Text, TextInput, TouchableHighlight,Alert,KeyboardAvoidingView,} from 'react-native';
 import * as Font from 'expo-font';  //font 
+import { FontAwesome, Feather } from 'react-native-vector-icons';
 
 const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState('');
@@ -55,6 +56,9 @@ const LoginScreen = ({ navigation }) => {
             <Text style={[styles.text2, { fontFamily: 'Satisfy-Regular' }]}>
               Login 
             </Text> 
+            
+            <View style={styles.inputContainer}>
+            <FontAwesome name="envelope" size={24} color="black" style={styles.inputIcon}/>
             <TextInput
             style={styles.input}
             placeholder="Email"
@@ -63,14 +67,18 @@ const LoginScreen = ({ navigation }) => {
             autoCapitalize="none"
             autoCompleteType="email"
             keyboardType="email-address"
-            />
+            /></View>
+            
+            <View style={styles.inputContainer}>
+            <FontAwesome name="lock" size={24} color="black" style={styles.inputIcon}/>
             <TextInput
             style={styles.input}
             placeholder="Password"
             onChangeText={(text) => setPassword(text)}
             value={password}
             secureTextEntry
-            />
+            /></View>
+
             <TouchableHighlight style={styles.button} 
               underlayColor="rgba(255, 200, 0, 0.75)" //Downpress button color and alpha level
               onPress={handleLogin}>
@@ -112,15 +120,27 @@ const styles = StyleSheet.create({
     marginHorizontal: 0,
     marginVertical: 0,
   },
-  input: {
-    height: 50,
-    width: '100%',
+  inputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
     backgroundColor: '#FFFFFF',
     borderWidth: 1,
     borderColor: '#ccc',
     borderRadius: 5,
-    paddingHorizontal: 10,
-    marginVertical: 10,
+    height: 50,
+    marginHorizontal: 0,
+    marginVertical: 5,
+    paddingLeft: 10,
+  },
+  inputIcon: {
+    padding: 0,
+    color: '#FFC800',
+  },
+  input: {
+    height: 50,
+    flex: 1,
+    fontSize: 18,
+    paddingLeft: 10,
   },
   //button style properties
   button: {
