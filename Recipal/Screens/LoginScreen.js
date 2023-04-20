@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ImageBackground, TouchableOpacity,StyleSheet, SafeAreaView, ScrollView, Dimensions, View, Text, TextInput, TouchableHighlight,Alert,KeyboardAvoidingView,} from 'react-native';
 import * as Font from 'expo-font';  //font 
+import { FontAwesome, Feather } from 'react-native-vector-icons';
 
 const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState('');
@@ -35,71 +36,69 @@ const LoginScreen = ({ navigation }) => {
 
   return (
       <SafeAreaView style={styles.container}>
-        
         <ImageBackground
-            source={require('../assets/LoginScreen.png')} //background image file path 
-            resizeMode= 'cover'  
-            style={styles.BgImgContainer}>
+        
+          source={require('../assets/LoginScreen.png')} //background image file path 
+          resizeMode= 'cover'  
+          style={styles.BgImgContainer}>
 
-              <View style={styles.textContainer}>
+          <View style={styles.textContainer}>
+            {fontLoaded ? ( //Recipal main logo
+            <TouchableOpacity onPress= {handleLogoPress} activeOpacity={1}>
+              <Text style={[styles.text, { fontFamily: 'Satisfy-Regular' }]}> 
+                Recipal
+              </Text>
+            </TouchableOpacity>
+            ) : null}
+          </View>
 
-                {fontLoaded ? ( //Recipal main logo
-                <TouchableOpacity onPress= {handleLogoPress} activeOpacity={1}>
-                  <Text style={[styles.text, { fontFamily: 'Satisfy-Regular' }]}> 
-                    Recipal
-                  </Text>
-                </TouchableOpacity>
-                ) : null}
-                
-              </View>
+          <View style={styles.container}>
+            <Text style={[styles.text2, { fontFamily: 'Satisfy-Regular' }]}>
+              Login 
+            </Text> 
+            
+            <View style={styles.inputContainer}>
+            <FontAwesome name="envelope" size={24} color="black" style={styles.inputIcon}/>
+            <TextInput
+            style={styles.input}
+            placeholder="Email"
+            onChangeText={(text) => setEmail(text)}
+            value={email}
+            autoCapitalize="none"
+            autoCompleteType="email"
+            keyboardType="email-address"
+            /></View>
+            
+            <View style={styles.inputContainer}>
+            <FontAwesome name="lock" size={24} color="black" style={styles.inputIcon}/>
+            <TextInput
+            style={styles.input}
+            placeholder="Password"
+            onChangeText={(text) => setPassword(text)}
+            value={password}
+            secureTextEntry
+            /></View>
 
-              <View style={styles.container}>
+            <TouchableHighlight style={styles.button} 
+              underlayColor="rgba(255, 200, 0, 0.75)" //Downpress button color and alpha level
+              onPress={handleLogin}>
+              <Text style={styles.buttonText}>Log in</Text>
+            </TouchableHighlight>
+          </View>
 
-                <Text style={[styles.text2, { fontFamily: 'Satisfy-Regular' }]}>
-                  Login 
-                </Text> 
+          <View style={styles.SupContainer}>
+            <Text style={[styles.text3, { fontFamily: 'Satisfy-Regular' }]}>
+              Don't have an account?
+            </Text>
 
-                <TextInput
-                style={styles.input}
-                placeholder="Email"
-                onChangeText={(text) => setEmail(text)}
-                value={email}
-                autoCapitalize="none"
-                autoCompleteType="email"
-                keyboardType="email-address"
-                />
-                <TextInput
-                style={styles.input}
-                placeholder="Password"
-                onChangeText={(text) => setPassword(text)}
-                value={password}
-                secureTextEntry
-                />
-                <TouchableHighlight style={styles.button} 
-                  underlayColor="rgba(255, 200, 0, 0.75)" //Downpress button color and alpha level
-                  onPress={handleLogin}>
-                  <Text style={styles.buttonText}>Log in</Text>
-                </TouchableHighlight>
+            <TouchableOpacity onPress= {handleSignUpPress}>
+              <Text style={[styles.text4, { fontFamily: 'Satisfy-Regular' }]}>
+                Sign up here
+              </Text>
+            </TouchableOpacity>
+          </View>
 
-              </View>
-
-            <View style={styles.SupContainer}>
-
-                <Text style={[styles.text3, { fontFamily: 'Satisfy-Regular' }]}>
-                  Don't have an account?
-                </Text>
-
-                <TouchableOpacity onPress= {handleSignUpPress}
-                >
-                  <Text style={[styles.text4, { fontFamily: 'Satisfy-Regular' }]}>
-                    Sign up here
-                  </Text>
-                </TouchableOpacity>
-
-            </View>
-
-          </ImageBackground>
-
+        </ImageBackground>
       </SafeAreaView>
     );
   };
@@ -121,15 +120,27 @@ const styles = StyleSheet.create({
     marginHorizontal: 0,
     marginVertical: 0,
   },
-  input: {
-    height: 50,
-    width: '100%',
+  inputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
     backgroundColor: '#FFFFFF',
     borderWidth: 1,
     borderColor: '#ccc',
     borderRadius: 5,
-    paddingHorizontal: 10,
-    marginVertical: 10,
+    height: 50,
+    marginHorizontal: 0,
+    marginVertical: 5,
+    paddingLeft: 10,
+  },
+  inputIcon: {
+    padding: 0,
+    color: '#FFC800',
+  },
+  input: {
+    height: 50,
+    flex: 1,
+    fontSize: 18,
+    paddingLeft: 10,
   },
   //button style properties
   button: {
