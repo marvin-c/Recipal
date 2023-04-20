@@ -35,71 +35,62 @@ const LoginScreen = ({ navigation }) => {
 
   return (
       <SafeAreaView style={styles.container}>
-        
         <ImageBackground
-            source={require('../assets/LoginScreen.png')} //background image file path 
-            resizeMode= 'cover'  
-            style={styles.BgImgContainer}>
+        
+          source={require('../assets/LoginScreen.png')} //background image file path 
+          resizeMode= 'cover'  
+          style={styles.BgImgContainer}>
 
-              <View style={styles.textContainer}>
+          <View style={styles.textContainer}>
+            {fontLoaded ? ( //Recipal main logo
+            <TouchableOpacity onPress= {handleLogoPress} activeOpacity={1}>
+              <Text style={[styles.text, { fontFamily: 'Satisfy-Regular' }]}> 
+                Recipal
+              </Text>
+            </TouchableOpacity>
+            ) : null}
+          </View>
 
-                {fontLoaded ? ( //Recipal main logo
-                <TouchableOpacity onPress= {handleLogoPress} activeOpacity={1}>
-                  <Text style={[styles.text, { fontFamily: 'Satisfy-Regular' }]}> 
-                    Recipal
-                  </Text>
-                </TouchableOpacity>
-                ) : null}
-                
-              </View>
+          <View style={styles.container}>
+            <Text style={[styles.text2, { fontFamily: 'Satisfy-Regular' }]}>
+              Login 
+            </Text> 
+            <TextInput
+            style={styles.input}
+            placeholder="Email"
+            onChangeText={(text) => setEmail(text)}
+            value={email}
+            autoCapitalize="none"
+            autoCompleteType="email"
+            keyboardType="email-address"
+            />
+            <TextInput
+            style={styles.input}
+            placeholder="Password"
+            onChangeText={(text) => setPassword(text)}
+            value={password}
+            secureTextEntry
+            />
+            <TouchableHighlight style={styles.button} 
+              underlayColor="rgba(255, 200, 0, 0.75)" //Downpress button color and alpha level
+              onPress={handleLogin}>
+              <Text style={styles.buttonText}>Log in</Text>
+            </TouchableHighlight>
+          </View>
 
-              <View style={styles.container}>
+          <View style={styles.SupContainer}>
+            <Text style={[styles.text3, { fontFamily: 'Satisfy-Regular' }]}>
+              Don't have an account?
+            </Text>
 
-                <Text style={[styles.text2, { fontFamily: 'Satisfy-Regular' }]}>
-                  Login 
-                </Text> 
+            <TouchableOpacity onPress= {handleSignUpPress}>
+              <Text style={[styles.text4, { fontFamily: 'Satisfy-Regular' }]}>
+                Sign up here
+              </Text>
+            </TouchableOpacity>
+          </View>
 
-                <TextInput
-                style={styles.input}
-                placeholder="Email"
-                onChangeText={(text) => setEmail(text)}
-                value={email}
-                autoCapitalize="none"
-                autoCompleteType="email"
-                keyboardType="email-address"
-                />
-                <TextInput
-                style={styles.input}
-                placeholder="Password"
-                onChangeText={(text) => setPassword(text)}
-                value={password}
-                secureTextEntry
-                />
-                <TouchableHighlight style={styles.button} 
-                  underlayColor="rgba(255, 200, 0, 0.75)" //Downpress button color and alpha level
-                  onPress={handleLogin}>
-                  <Text style={styles.buttonText}>Log in</Text>
-                </TouchableHighlight>
-
-              </View>
-
-            <View style={styles.SupContainer}>
-
-                <Text style={[styles.text3, { fontFamily: 'Satisfy-Regular' }]}>
-                  Don't have an account?
-                </Text>
-
-                <TouchableOpacity onPress= {handleSignUpPress}
-                >
-                  <Text style={[styles.text4, { fontFamily: 'Satisfy-Regular' }]}>
-                    Sign up here
-                  </Text>
-                </TouchableOpacity>
-
-            </View>
-
-          </ImageBackground>
-
+        </ImageBackground>
       </SafeAreaView>
     );
   };

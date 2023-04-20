@@ -1,6 +1,15 @@
  
-- python -m venv /PATH/NAME    --create virtual environment
-- source /path/bin/activate    --activate virtual environment
+- python -m venv /PATH/NAME    --create virtual environment	
+- source /path/bin/activate    --activate virtual environment	
+								
+PC =	python -m venv 'name'
+	cd 'name'
+	'name' dir
+	Scripts\activate
+	cd ..
+	cd core
+	dir
+	python manage.py runserver
 
 
 install expo go, android-studio, android-sdk
