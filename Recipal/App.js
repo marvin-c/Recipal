@@ -7,6 +7,7 @@ import SignUpScreen from './Screens/SignupScreen';
 import AboutUsScreen from './Screens/AboutUsScreen';
 import UserAgreement from './Screens/UserAgreement';
 import UserProfile from './Screens/UserProfile';
+import 'react-native-gesture-handler';
 
 const Stack = createStackNavigator();
 
@@ -50,3 +51,5 @@ const App = () => {
 };
 
 export default App;
+
+/**/
