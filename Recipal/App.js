@@ -6,6 +6,7 @@ import LoginScreen from './Screens/LoginScreen';
 import SignUpScreen from './Screens/SignupScreen';
 import AboutUsScreen from './Screens/AboutUsScreen';
 import UserAgreement from './Screens/UserAgreement';
+import HomeScreen from './Screens/HomeScreen';
 
 const Stack = createStackNavigator();
 
@@ -36,6 +37,11 @@ const App = () => {
         <Stack.Screen
           name="UserAgreement"
           component={UserAgreement}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
