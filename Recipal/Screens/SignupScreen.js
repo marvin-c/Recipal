@@ -13,6 +13,7 @@ const SignUpScreen = ({ navigation }) => {
     const [fontLoaded, setFontLoaded] = useState(false);
     const handleLoginPress = () => {navigation.navigate('Login');}; //call the loginScreen on button press
     const handleLogoPress = () => {navigation.navigate('Splash');};//send user back to the splash screen
+    const handleSignUpPress = () => {navigation.navigate('UserAgreement');};//send user to useragreement screen
   
     // Load custom font asynchronouslyc
     useEffect(() => {
@@ -31,6 +32,7 @@ const SignUpScreen = ({ navigation }) => {
       setErrorMessage('Passwords do not match');
       return;
     }
+    else{navigation.navigate('UserAgreement');};
 
     // Your sign up logic goes here
 
@@ -49,8 +51,8 @@ const SignUpScreen = ({ navigation }) => {
         source={require('../assets/SignUp.png')} //background image file path 
         resizeMode= 'cover'  
         style={styles.BgImgContainer}>
-
-        <View style={styles.textContainer}>
+          
+        <View>
           {fontLoaded ? ( //Recipal main logo, Touchable opacity allows for button behaviour, activeOpacity changes the transparency when clicked
             <TouchableOpacity onPress= {handleLogoPress} activeOpacity={1}> 
               <Text style={[styles.text, { fontFamily: 'Satisfy-Regular' }]}> 
@@ -110,7 +112,7 @@ const SignUpScreen = ({ navigation }) => {
             <Text style={styles.buttonText}>Sign Up</Text>
           </TouchableHighlight>
         </View>
-
+        
         <View style={styles.SupContainer}>
           <Text style={[styles.text3, { fontFamily: 'Satisfy-Regular' }]}>
             Already have an account?
@@ -154,7 +156,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     height: 50,
     marginHorizontal: 0,
-    marginVertical: 5,
+    marginVertical: 2,
     paddingLeft: 10,
   },
   inputIcon: {
@@ -199,27 +201,25 @@ const styles = StyleSheet.create({
   text2: { //signup text style properties
     left: 0,
     top: '0%',
-    fontSize: 40,
+    fontSize: 35,
   },
-  SupContainer: {  //Login prompt container style properties
-    justifyContent: 'center',
+  SupContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    paddingTop: '10%',
+    alignItems: 'center',
     width: '100%',
-    top: '0%',
+    bottom: '5%',
   },
-  text3: { //'Already have an account?' text style properties
-    left: '13%',
-    top: '0%',
+  text3: {
     fontSize: 18,
   },
-  text4: { //'Login here' text style properties
-    left: '62%',
-    top: '-100%',
+  text4: {
     fontSize: 18,
     color: '#FFC800',
     textShadowColor: '#b37700',
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 2,
-    //textDecorationLine: 'underline',
   },
   error: {
     color: 'red',

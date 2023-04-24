@@ -6,6 +6,7 @@ import LoginScreen from './Screens/LoginScreen';
 import SignUpScreen from './Screens/SignupScreen';
 import AboutUsScreen from './Screens/AboutUsScreen';
 import UserAgreement from './Screens/UserAgreement';
+import UserProfile from './Screens/UserProfile';
 import HomeScreen from './Screens/HomeScreen';
 import CategoriesScreen from './Screens/CategoriesScreen';
 import SearchScreen from './Screens/SearchScreen';
@@ -63,6 +64,11 @@ const App = () => {
           component={RecipePage}
           options={{ headerShown: false }}
         />        
+        <Stack.Screen
+          name='Profile'
+          component={UserProfile}
+          options={{headerShown: false}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -3,6 +3,7 @@ import { useNavigation } from '@react-navigation/native';
 import React, { useState, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import SearchBar from '../Components/SearchBar';
+import CategoriesList from '../Components/recipes/categories-list';
 import * as Font from 'expo-font';
 
 const HomeScreen = ({ navigation }) => {
