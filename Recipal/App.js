@@ -8,6 +8,7 @@ import AboutUsScreen from './Screens/AboutUsScreen';
 import UserAgreement from './Screens/UserAgreement';
 import HomeScreen from './Screens/HomeScreen';
 import CategoriesScreen from './Screens/CategoriesScreen';
+import SearchScreen from './Screens/SearchScreen';
 
 const Stack = createStackNavigator();
 
@@ -48,6 +49,11 @@ const App = () => {
         <Stack.Screen
           name="Categories"
           component={CategoriesScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Search"
+          component={SearchScreen}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
