@@ -1,13 +1,15 @@
 import { SafeAreaView, ScrollView, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
+import SearchBar from '../Components/SearchBar';
 
 const HomeScreen = () => {
     const navigation = useNavigation()
     return (
         <SafeAreaView>
             <ScrollView>
-                <View>
+                <View style={styles.bgcolorContainer}>
+                <SearchBar />
                     <TouchableOpacity onPress={() => navigation.navigate('Categories')} style={styles.btn}>
                        <Text style={{color: 'black'}}>Categories</Text> 
                     </TouchableOpacity>
