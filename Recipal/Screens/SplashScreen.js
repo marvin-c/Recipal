@@ -6,6 +6,8 @@ import BackgroundImg from '../Components/BackgroundImage';
   const SplashScreen = ({ navigation }) => {
   const handleLoginPress = () => {navigation.navigate('Login');}; //call the loginScreen on button press
   const handleSignUpPress = () => {navigation.navigate('Signup');}; //call the SignupScreen on button press
+  const handleHomeScreen = () => {navigation.navigate('Home');}; //call the Landing page on button press
+
   return (
     <SafeAreaView style={styles.container}>
 
@@ -16,7 +18,7 @@ import BackgroundImg from '../Components/BackgroundImage';
       <TouchableHighlight //button container, 'TouchableHighlight' allowed me to use the borderRadius style tool
         style={styles.button}
         underlayColor="rgba(255, 200, 0, 0.75)" //Downpress button color and alpha level
-        onPress={() => Alert.alert('Button pressed')}>  
+        onPress={handleHomeScreen}>  
         <Text style={styles.buttonText}>Get started</Text> 
       </TouchableHighlight>
 
