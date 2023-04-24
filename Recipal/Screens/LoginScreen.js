@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     height: 50,
     marginHorizontal: 0,
-    marginVertical: 5,
+    marginVertical: 2,
     paddingLeft: 10,
   },
   inputIcon: {
@@ -174,27 +174,24 @@ const styles = StyleSheet.create({
   text2: { //Login text style properties
     left: 0,
     top: '0%',
-    fontSize: 40,
+    fontSize: 35,
   },
-  SupContainer: {  //Login prompt container style properties
-    justifyContent: 'center',
+  SupContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
     width: '100%',
-    top: '0%',
+    bottom: '5%',
   },
-  text3: { //'Already have an account?' text style properties
-    left: '13%',
-    top: '0%',
+  text3: {
     fontSize: 18,
   },
-  text4: { //'Login here' text style properties
-    left: '57%',
-    top: '-100%',
+  text4: {
     fontSize: 18,
     color: '#FFC800',
     textShadowColor: '#b37700',
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 2,
-    //textDecorationLine: 'underline',
   },
 });
 
