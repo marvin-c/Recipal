@@ -15,16 +15,24 @@ const CarouselCards = () => {
     <View>
       <Carousel
         layout="default"
-        layoutCardOffset={9}
+        layoutCardOffset={1}
         ref={isCarousel}
-        data={data}
+        data={Data}
         renderItem={renderItem}
         sliderWidth={SLIDER_WIDTH}
-        itemWidth={ITEM_WIDTH}
+        itemWidth={150}
         onSnapToItem={(index) => setIndex(index)}
       />
-      <Pagination
-        dotsLength={data.length}
+     
+    </View>
+  )
+}
+
+export default CarouselCards
+
+// pagination add the little dots to the carousel, indicating what slide is currently in focus
+/* <Pagination
+        dotsLength={Data.length}
         activeDotIndex={index}
         containerStyle={{ backgroundColor: 'transparent', paddingVertical: 8 }}
         dotStyle={{
@@ -42,9 +50,4 @@ const CarouselCards = () => {
         inactiveDotOpacity={0.4}
         inactiveDotScale={0.6}
         dotContainerStyle={{ marginHorizontal: -4 }}
-      />
-    </View>
-  )
-}
-
-export default CarouselCards
+      /> */

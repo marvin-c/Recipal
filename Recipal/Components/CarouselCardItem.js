@@ -19,8 +19,8 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
     borderRadius: 8,
-    width: ITEM_WIDTH,
-    paddingBottom: 40,
+    width: 150,
+    paddingBottom: 0,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -31,18 +31,19 @@ const styles = StyleSheet.create({
     elevation: 7,
   },
   image: {
-    width: ITEM_WIDTH,
-    height: 300,
+    width: 150,
+    height: 200,
+    borderRadius: 10,
   },
   header: {
-    color: "#222",
+    color: "white",
     fontSize: 28,
     fontWeight: "bold",
     paddingLeft: 20,
     paddingTop: 20
   },
   body: {
-    color: "#222",
+    color: "white",
     fontSize: 18,
     paddingLeft: 20,
     paddingLeft: 20,
