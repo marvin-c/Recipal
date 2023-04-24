@@ -1,43 +1,40 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Image, FlatList, ImageBackground, Button, TouchableOpacity,StyleSheet, SafeAreaView, ScrollView, Dimensions, TextInput, TouchableHighlight,Alert,KeyboardAvoidingView, } from 'react-native';
+import { View, Text, Image, StyleSheet, SafeAreaView, } from 'react-native';
+import CarouselCards from '../Components/CarouselCards';
 
-const UserProfile = () => {
-  const recentlyViewedRecipes = [
-    { id: 1, image: 'recipe1.jpg' },
-    { id: 2, image: 'recipe2.jpg' },
-    { id: 3, image: 'recipe3.jpg' },
-  ];
-
-  const renderItem = ({ item }) => {
-    return (
-      <Image source={{ uri: item.image }} style={{ width: 150, height: 150 }} />
-    );
-  };
-
+export default function UserProfile() {
   return (
-    <View style={{ flex: 1 }}>
-      <View style={{ alignItems: 'center', marginTop: 20 }}>
+    <SafeAreaView style={styles.container}>
+      <View>
         <Image
           source={{ uri: 'profile.jpg' }}
           style={{ width: 100, height: 100, borderRadius: 50 }}
-        />
-        <Text style={{ fontSize: 20, fontWeight: 'bold', marginTop: 10 }}>
+/>
+        <Text>
           John Doe
         </Text>
       </View>
+
       <View style={{ marginTop: 20 }}>
         <Text style={{ fontSize: 18, fontWeight: 'bold' }}>Recently Viewed</Text>
-        <FlatList
-          data={recentlyViewedRecipes}
-          renderItem={renderItem}
-          keyExtractor={(item) => item.id.toString()}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-        />
+      <CarouselCards />
       </View>
-    </View>
+
+    </SafeAreaView>
   );
 };
 
-export default UserProfile;
-
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 50
+  },
+  text: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginTop: 10,
+  }
+})
