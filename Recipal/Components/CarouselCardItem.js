@@ -11,8 +11,6 @@ const CarouselCardItem = ({ item, index }) => {
         source={{ uri: item.imgUrl }}
         style={styles.image}
       />
-      <Text style={styles.header}>{item.title}</Text>
-      <Text style={styles.body}>{item.body}</Text>
     </View>
   )
 }
@@ -51,3 +49,5 @@ const styles = StyleSheet.create({
     paddingRight: 20
   }
 })
+
+export default CarouselCardItem;

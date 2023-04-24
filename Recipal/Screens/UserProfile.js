@@ -5,21 +5,23 @@ import CarouselCards from '../Components/CarouselCards';
 export default function UserProfile() {
   return (
     <SafeAreaView style={styles.container}>
-      <View>
+      
+      <View style={styles.username}>
         <Image
-          source={{ uri: 'profile.jpg' }}
-          style={{ width: 100, height: 100, borderRadius: 50 }}
-/>
+          source={require('../assets/profile.png')}
+          style={{ width: 100, height: 100, borderRadius: 50 }}/>
         <Text>
           John Doe
         </Text>
       </View>
 
-      <View style={{ marginTop: 20 }}>
-        <Text style={{ fontSize: 18, fontWeight: 'bold' }}>Recently Viewed</Text>
-      <CarouselCards />
+      <View style={styles.headerContainer}>
+        <Text style={styles.header}>
+          Recently Viewed</Text>
       </View>
+      <CarouselCards />
 
+      
     </SafeAreaView>
   );
 };
@@ -32,9 +34,21 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 50
   },
+  username: {
+    alignItems: 'center',
+    marginTop: 50,
+  },
   text: {
     fontSize: 20,
     fontWeight: 'bold',
     marginTop: 10,
-  }
+  },
+  headerContainer: {
+    alignSelf: 'flex-start',
+  },
+  header: {
+    textAlign: 'left',
+    fontWeight: 'bold',
+    fontSize: 18,
+  },
 })
