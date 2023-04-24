@@ -9,6 +9,8 @@ import UserAgreement from './Screens/UserAgreement';
 import HomeScreen from './Screens/HomeScreen';
 import CategoriesScreen from './Screens/CategoriesScreen';
 import SearchScreen from './Screens/SearchScreen';
+import RecipePage from './Screens/RecipePage';
+
 
 const Stack = createStackNavigator();
 
@@ -56,6 +58,11 @@ const App = () => {
           component={SearchScreen}
           options={{ headerShown: false }}
         />
+        <Stack.Screen
+          name="RecipePage"
+          component={RecipePage}
+          options={{ headerShown: false }}
+        />        
       </Stack.Navigator>
     </NavigationContainer>
   );

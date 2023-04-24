@@ -1,12 +1,13 @@
 import React from 'react';
 import { View, Text, ImageBackground, StyleSheet } from 'react-native';
+import SearchBar from '../Components/SearchBar';
 
 
 const CategoriesScreen = () => {
   return (
           <View style={styles.container}>
             <View>
-              <Text>Searchbar</Text>
+              <SearchBar />
             </View>
             <View style={styles.wrapper}>
                 <View style={{backgroundColor: 'white'}}>
@@ -22,7 +23,8 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: 'white'
+    backgroundColor: 'white',
+    paddingTop: 100
   },
   image: {
     resizeMode: 'cover',
