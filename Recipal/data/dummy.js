@@ -1,0 +1,17 @@
+export const DUMMY_DATA = [
+    {id: 1, title: 'breakfast', description: 'recipe step by step instruction1'},
+    {id: 2, title: 'lunch', description: 'recipe step by step instruction2'},
+    {id: 3, title: 'dinner', description: 'recipe step by step instruction3'},
+    {id: 4, title: 'salads', description: 'recipe step by step instruction4'},
+    {id: 5, title: 'desserts', description: 'recipe step by step instruction5'},
+    {id: 6, title: 'dumplings', description: 'recipe step by step instruction6'},
+    {id: 7, title: 'vegetarian', description: 'recipe step by step instruction7'},
+    {id: 8, title: 'barbeque', description: 'recipe step by step instruction8'},
+    {id: 9, title: 'baking', description: 'recipe step by step instruction9'},
+    {id: 10, title: 'pastry', description: 'recipe step by step instruction10'},
+    {id: 11, title: 'pasta', description: 'recipe step by step instruction11'},
+    {id: 12, title: 'soups', description: 'recipe step by step instruction12'},
+    {id: 13, title: 'seafood', description: 'recipe step by step instruction13'},
+    {id: 14, title: 'smoothies', description: 'recipe step by step instruction14'},
+    {id: 15, title: 'cocktails', description: 'recipe step by step instruction15'},
+]

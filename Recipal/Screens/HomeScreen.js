@@ -2,6 +2,7 @@ import { SafeAreaView, ScrollView, StyleSheet, Text, View, TouchableOpacity } fr
 import { useNavigation } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import SearchBar from '../Components/SearchBar';
+import CategoriesList from '../Components/recipes/categories-list';
 
 const HomeScreen = () => {
     const navigation = useNavigation()
