@@ -8,7 +8,7 @@ const HomeScreen = () => {
         <SafeAreaView>
             <ScrollView>
                 <View>
-                    <TouchableOpacity onPress={() => navigation.navigate('Splash')} style={styles.btn}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Categories')} style={styles.btn}>
                        <Text style={{color: 'black'}}>Categories</Text> 
                     </TouchableOpacity>
                     <Text style={styles.subttlCointainer}>

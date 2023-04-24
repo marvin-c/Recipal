@@ -7,6 +7,7 @@ import SignUpScreen from './Screens/SignupScreen';
 import AboutUsScreen from './Screens/AboutUsScreen';
 import UserAgreement from './Screens/UserAgreement';
 import HomeScreen from './Screens/HomeScreen';
+import CategoriesScreen from './Screens/CategoriesScreen';
 
 const Stack = createStackNavigator();
 
@@ -42,6 +43,11 @@ const App = () => {
         <Stack.Screen
           name="Home"
           component={HomeScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Categories"
+          component={CategoriesScreen}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
