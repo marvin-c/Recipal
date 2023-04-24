@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
     bgcolorContainer: {
       backgroundColor: 'white', 
       height: 1600,
+      paddingTop: 100
     },
     subttlCointainer: {
       paddingLeft: 15,
