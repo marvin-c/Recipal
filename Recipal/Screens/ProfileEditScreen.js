@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
-import {View, Text, Image, StyleSheet, TouchableOpacity, TouchableHighlight, SafeAreaView, ScrollView} from 'react-native';
+import {View, Alert, Text, Image, StyleSheet, TouchableOpacity, TouchableHighlight, SafeAreaView, ScrollView} from 'react-native';
 import { FontAwesome, Feather } from 'react-native-vector-icons';
 
 
 const ProfileEdit = ({navigation}) => {
-    const handleHomePress = () => { //home button navigation handling
-    navigation.navigate('Home')
+    const handleBackPress = () => { //home button navigation handling
+    navigation.navigate('Profile')
     };
-    const handleProfileEdit = () => { //Profile Editor button navigation handling
-    navigation.navigate('ProfileEdit')
+    const handleProSave = () => { //Profile Editor button navigation handling
+    navigation.navigate('ProfileSave')
     };
-
+    const profilePicUpload = () => { //Profile Picture file search and uploader
+   Alert.alert('Profile pic upload')
+    };
 
 return (
     <View style={styles.container}>
@@ -24,7 +26,7 @@ return (
                 <View style={styles.uploadButtonContainer}>
                     <TouchableHighlight style={styles.ProPicUpload}
                         underlayColor="rgba(255, 200, 0, 0.75)" //Downpress button
-                        onPress={handleHomePress}>
+                        onPress={profilePicUpload}>
                         <FontAwesome name="pencil" size={36} color="black" style={styles.inputIcon}/> 
                     </TouchableHighlight>
                 </View>
@@ -38,13 +40,13 @@ return (
         <View style={styles.navigationContainer}>
       <TouchableHighlight style={styles.backButton} //Home navigation button
           underlayColor="rgba(255, 200, 0, 0.75)" //Downpress button
-          onPress={handleHomePress}>
+          onPress={handleBackPress}>
           <FontAwesome name="arrow-circle-o-left" size={36} color="black" style={styles.inputIcon}/>
       </TouchableHighlight>
 
       <TouchableHighlight style={styles.saveButton} // User profile preference settings etc
         underlayColor="rgba(255, 200, 0, 0.75)" //Downpress button
-        onPress={handleProfileEdit}>
+        onPress={handleProSave}>
         <FontAwesome name="save" size={36} color="black" style={styles.inputIcon}/>
       </TouchableHighlight>
     </View>

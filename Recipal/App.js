@@ -12,6 +12,7 @@ import CategoriesScreen from './Screens/CategoriesScreen';
 import SearchScreen from './Screens/SearchScreen';
 import RecipePage from './Screens/RecipePage';
 import ProfileEdit from './Screens/ProfileEditScreen';
+import CustomSideMenu from './Screens/SideMenu';
 
 
 const Stack = createStackNavigator();
@@ -71,12 +72,16 @@ const App = () => {
           options={{headerShown: false}}
         />
         <Stack.Screen
+          name="CustomSideMenu"
+          component={CustomSideMenu}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
           name='ProfileEdit'
           component={ProfileEdit}
           options={{headerShown: false}}
         />
-
-        </Stack.Navigator>
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };

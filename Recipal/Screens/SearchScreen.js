@@ -4,6 +4,7 @@ import { TouchableHighlight, SafeAreaView, ScrollView, StyleSheet, Text, View, T
 import SearchBar from "../Components/SearchBar";
 import { StatusBar } from 'expo-status-bar';
 import * as Font from 'expo-font';
+import CustomSideMenu from './SideMenu';
 
 const SearchScreen = () => {
     const [fontLoaded, setFontLoaded] = useState(false);
@@ -33,6 +34,9 @@ const SearchScreen = () => {
                     <Text style={styles.headerText}>Recipal</Text>
                 </View>
                 <SearchBar />
+                <View>
+                    <CustomSideMenu />
+                </View>
                 <View style={styles.row}>
                     <View style={styles.screen}>
                         <Text>List of Recipes under the category {title}</Text>
