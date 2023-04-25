@@ -3,8 +3,8 @@ import { useNavigation } from '@react-navigation/native';
 import React, { useState, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import SearchBar from '../Components/SearchBar';
-import CategoriesList from '../Components/recipes/categories-list';
 import * as Font from 'expo-font';
+import CustomSideMenu from './SideMenu';
 
 const HomeScreen = ({ navigation }) => {
   const [fontLoaded, setFontLoaded] = useState(false);
@@ -34,31 +34,28 @@ const HomeScreen = ({ navigation }) => {
   return (
     <SafeAreaView>
       <ScrollView>
-        <View>
+        <View style={styles.overContainer}>
           <View style={styles.header}>
             <Text style={styles.headerText}>Recipal</Text>
           </View>
           <SearchBar />
-
+          <View>
+        <CustomSideMenu /></View>
           <TouchableOpacity onPress={() => navigation.navigate('Categories')} style={styles.btn}>
             <Text style={{color: 'black'}}>Categories</Text> 
           </TouchableOpacity>
-          
           <Text style={styles.subttlCointainer}>
             Featured
           </Text>
-
           {recipes.map((recipe) => (
             <View key={recipe.id}>
               <Text style={styles.recipeTitle}>{recipe.title}</Text>
               <Text style={styles.recipeDesc}>{recipe.description}</Text>
             </View>
           ))}
-
           <Text style={styles.subttlCointainer}>
             Recommended based on preferences
           </Text>
-          
           <TouchableHighlight
             style={styles.btn}
             underlayColor="rgba(255, 200, 0, 0.75)"
@@ -74,10 +71,13 @@ const HomeScreen = ({ navigation }) => {
 }
 
 const styles = StyleSheet.create({
+    overContainer: {
+      flex: 1,
+      height: 1600
+    },
     header: {
         paddingTop: 50,
         paddingBottom: 10,
-        // backgroundColor: '#FFC800',
         alignItems: 'center',
     },
     headerText: {
@@ -85,17 +85,6 @@ const styles = StyleSheet.create({
         fontWeight: '600',
         fontSize: 40,
         color: 'black',
-    },
-    searchBox: {
-        backgroundColor: 'white',
-        marginTop: 10,
-        marginBottom: 10,
-        marginHorizontal: 15,
-        borderRadius: 100,
-        height: 40,
-        width: 330,
-        justifyContent: 'center',
-        paddingHorizontal: 10,
     },
     searchText: {
         fontFamily: 'System',
