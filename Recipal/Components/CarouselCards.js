@@ -1,14 +1,13 @@
-import React from 'react'
-import { View } from "react-native"
-import Carousel, { Pagination } from 'react-native-snap-carousel'
+import React from 'react';
+import { View } from 'react-native';
+import Carousel, { Pagination } from 'react-native-snap-carousel';
 import CarouselCardItem, { SLIDER_WIDTH, ITEM_WIDTH } from '../Components/CarouselCardItem';
-import Data from '../Components/Data';
 
-const CarouselCards = () => {
-    const [index, setIndex] = React.useState(0)
-    const isCarousel = React.useRef(null)
-    const renderItem = ({ item }) => {
-      return <CarouselCardItem item={item} />;
+const CarouselCards = ({ data }) => {
+  const [index, setIndex] = React.useState(0);
+  const isCarousel = React.useRef(null);
+  const renderItem = ({ item }) => {
+    return <CarouselCardItem item={item} />;
   };
 
   return (
@@ -17,18 +16,17 @@ const CarouselCards = () => {
         layout="default"
         layoutCardOffset={1}
         ref={isCarousel}
-        data={Data}
+        data={data}
         renderItem={renderItem}
         sliderWidth={SLIDER_WIDTH}
-        itemWidth={150}
+        itemWidth={ITEM_WIDTH}
         onSnapToItem={(index) => setIndex(index)}
       />
-     
     </View>
-  )
-}
+  );
+};
 
-export default CarouselCards
+export default CarouselCards;
 
 // pagination add the little dots to the carousel, indicating what slide is currently in focus
 /* <Pagination
