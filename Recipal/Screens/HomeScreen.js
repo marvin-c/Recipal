@@ -8,56 +8,69 @@ import * as Font from 'expo-font';
 
 const HomeScreen = ({ navigation }) => {
   const [fontLoaded, setFontLoaded] = useState(false);
+  const [recipes, setRecipes] = useState([]);
+  
+  // Load the custom font and fetch the recipes data from the API
+  useEffect(() => {
+    async function fetchData() {
+      await Font.loadAsync({
+        'DancingScript-Regular': require('../assets/fonts/DancingScript-Regular.ttf'),
+      });
+      setFontLoaded(true);
+
+      const response = await fetch('http://192.9.174.169/api/rcpl_app/');
+      const data = await response.json();
+      setRecipes(data);
+    }
+    fetchData();
+  }, []);
+
   const handleRecipePage = () => {navigation.navigate('RecipePage');}; //call the Recipe page on button press
 
-    // const navigation = useNavigation();
+  if (!fontLoaded) {
+    return null; // Wait for the font to load before rendering the screen
+  }
 
-    // Load the custom font
-    useEffect(() => {
-        async function loadFont() {
-            await Font.loadAsync({
-                'DancingScript-Regular': require('../assets/fonts/DancingScript-Regular.ttf'),
-            });
-            setFontLoaded(true);
-        }
-        loadFont();
-    }, []);
+  return (
+    <SafeAreaView>
+      <ScrollView>
+        <View>
+          <View style={styles.header}>
+            <Text style={styles.headerText}>Recipal</Text>
+          </View>
+          <SearchBar />
 
-    if (!fontLoaded) {
-        return null; // Wait for the font to load before rendering the screen
-    }
-    // const handleRecipePage = () => {navigation.navigate('RecipePage');}; //call the Recipe page on button press
+          <TouchableOpacity onPress={() => navigation.navigate('Categories')} style={styles.btn}>
+            <Text style={{color: 'black'}}>Categories</Text> 
+          </TouchableOpacity>
+          
+          <Text style={styles.subttlCointainer}>
+            Featured
+          </Text>
 
-    return (
-        <SafeAreaView>
-            <ScrollView>
-                <View>
-                    <View style={styles.header}>
-                        <Text style={styles.headerText}>Recipal</Text>
-                    </View>
-                    <SearchBar />
+          {recipes.map((recipe) => (
+            <View key={recipe.id}>
+              <Text style={styles.recipeTitle}>{recipe.title}</Text>
+              <Text style={styles.recipeDesc}>{recipe.description}</Text>
+            </View>
+          ))}
 
-                    <TouchableOpacity onPress={() => navigation.navigate('Categories')} style={styles.btn}>
-                       <Text style={{color: 'black'}}>Categories</Text> 
-                    </TouchableOpacity>
-                    <Text style={styles.subttlCointainer}>
-                        Featured
-                    </Text>
-                    <Text style={styles.subttlCointainer}>
-                        Recommended based on preferences
-                    </Text>
-                    <TouchableHighlight
-                      style={styles.btn}
-                      underlayColor="rgba(255, 200, 0, 0.75)"
-                      onPress={handleRecipePage}
-                    >  
-                      <Text style={styles.buttonText}>Recipe Page</Text> 
-                    </TouchableHighlight>
-                </View>
-            </ScrollView>
-            <StatusBar style='dark' />
-        </SafeAreaView>
-    );
+          <Text style={styles.subttlCointainer}>
+            Recommended based on preferences
+          </Text>
+          
+          <TouchableHighlight
+            style={styles.btn}
+            underlayColor="rgba(255, 200, 0, 0.75)"
+            onPress={handleRecipePage}
+          >  
+            <Text style={styles.buttonText}>Recipe Page</Text> 
+          </TouchableHighlight>
+        </View>
+      </ScrollView>
+      <StatusBar style='dark' />
+    </SafeAreaView>
+  );
 }
 
 const styles = StyleSheet.create({
