@@ -7,11 +7,11 @@ import { FontAwesome, Feather } from 'react-native-vector-icons';
 
 const UserProfile = ({ navigation }) => {
 
-  const handleHomePress = () => {
+  const handleHomePress = () => { //home button navigation handling
   navigation.navigate('Home')
   };
-  const handleProfileEdit = () => {
-    navigation.navigate('ProfileEditScreen')
+  const handleProfileEdit = () => { //Profile Editor button navigation handling
+    navigation.navigate('ProfileEdit')
   };
 
   return (
@@ -97,9 +97,12 @@ const UserProfile = ({ navigation }) => {
     
   </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
+  container:{
+    flex:1,
+  },
   scrollContainer: {
     paddingHorizontal: 20,
     paddingVertical: 30,
@@ -109,6 +112,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 5,
+    height: 200,
   },
   username: {
     alignItems: 'center',
@@ -117,11 +121,6 @@ const styles = StyleSheet.create({
   headerContainer: {
     alignSelf: 'flex-start',
     marginLeft: 10,
-    marginTop: 10,
-  },
-  text: {
-    fontSize: 20,
-    fontWeight: 'bold',
     marginTop: 10,
   },
   header: {
