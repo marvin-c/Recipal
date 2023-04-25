@@ -11,6 +11,7 @@ import HomeScreen from './Screens/HomeScreen';
 import CategoriesScreen from './Screens/CategoriesScreen';
 import SearchScreen from './Screens/SearchScreen';
 import RecipePage from './Screens/RecipePage';
+import ProfileEdit from './Screens/ProfileEditScreen';
 
 
 const Stack = createStackNavigator();
@@ -18,7 +19,7 @@ const Stack = createStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Splash">
+      <Stack.Navigator initialRouteName="Profile">
         <Stack.Screen
           name="Splash"
           component={SplashScreen}
@@ -69,7 +70,13 @@ const App = () => {
           component={UserProfile}
           options={{headerShown: false}}
         />
-      </Stack.Navigator>
+        <Stack.Screen
+          name='ProfileEdit'
+          component={ProfileEdit}
+          options={{headerShown: false}}
+        />
+
+        </Stack.Navigator>
     </NavigationContainer>
   );
 };

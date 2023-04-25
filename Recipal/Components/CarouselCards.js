@@ -3,19 +3,11 @@ import { View } from 'react-native';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 import CarouselCardItem, { SLIDER_WIDTH, ITEM_WIDTH } from '../Components/CarouselCardItem';
 
-<<<<<<< HEAD
-const CarouselCards = ({ data }) => {
-  const [index, setIndex] = React.useState(0);
-  const isCarousel = React.useRef(null);
-  const renderItem = ({ item }) => {
-    return <CarouselCardItem item={item} />;
-=======
 const CarouselCards = ({ images }) => {
     const [index, setIndex] = React.useState(0)
     const isCarousel = React.useRef(null)
     const renderItem = ({ item }) => {
       return <CarouselCardItem item={item} />;
->>>>>>> ddaaa10e6f69a2f615cb6968de3d222cc33033f8
   };
 
   return (
@@ -24,20 +16,13 @@ const CarouselCards = ({ images }) => {
         layout="default"
         layoutCardOffset={1}
         ref={isCarousel}
-<<<<<<< HEAD
-        data={data}
-=======
         data={images}
->>>>>>> ddaaa10e6f69a2f615cb6968de3d222cc33033f8
         renderItem={renderItem}
         sliderWidth={SLIDER_WIDTH}
-        itemWidth={ITEM_WIDTH}
+        itemWidth={150}
         onSnapToItem={(index) => setIndex(index)}
       />
-<<<<<<< HEAD
-=======
       
->>>>>>> ddaaa10e6f69a2f615cb6968de3d222cc33033f8
     </View>
   );
 };

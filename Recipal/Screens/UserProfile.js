@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-import React from 'react';
-import { View, Text, Image, StyleSheet, SafeAreaView, ScrollView } from 'react-native';
-import CarouselCards from '../Components/CarouselCards';
-import CarouselData from '../Components/CarouselData';
-=======
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, TouchableHighlight,SafeAreaView, ScrollView, } from 'react-native';
 import CarouselCards from '../Components/CarouselCards';
@@ -13,50 +7,14 @@ import { FontAwesome, Feather } from 'react-native-vector-icons';
 
 const UserProfile = ({ navigation }) => {
 
-  const handleHomePress = () => {
+  const handleHomePress = () => { //home button navigation handling
   navigation.navigate('Home')
   };
-  const handleProfileEdit = () => {
-    navigation.navigate('ProfileEditScreen')
+  const handleProfileEdit = () => { //Profile Editor button navigation handling
+    navigation.navigate('ProfileEdit')
   };
->>>>>>> ddaaa10e6f69a2f615cb6968de3d222cc33033f8
 
   return (
-<<<<<<< HEAD
-    <ScrollView contentContainerStyle={styles.scrollContainer}>
-      <View style={styles.username}>
-        <Image
-          source={require('../assets/profile.png')}
-          style={{ width: 100, height: 100, borderRadius: 50 }}
-        />
-        <Text>John Doe</Text>
-      </View>
-
-      <View style={styles.headerContainer}>
-        <Text style={styles.header}>Recently Viewed</Text>
-      </View>
-
-      <View style={styles.carouselContainer}>
-        <CarouselCards data={CarouselData.recentlyViewed} />
-      </View>
-
-      <View style={styles.headerContainer}>
-        <Text style={styles.header}>Favourites</Text>
-      </View>
-
-      <View style={styles.carouselContainer}>
-        <CarouselCards data={CarouselData.favourites} />
-      </View>
-
-      <View style={styles.headerContainer}>
-        <Text style={styles.header}>Your Recipes</Text>
-      </View>
-
-      <View style={styles.carouselContainer}>
-        <CarouselCards data={CarouselData.yourRecipes} />
-      </View>
-    </ScrollView>
-=======
     <View style={styles.container}>
     <ScrollView contentContainerStyle={styles.scrollContainer}>
       <View style={styles.username}>
@@ -138,24 +96,23 @@ const UserProfile = ({ navigation }) => {
     </View>
     
   </View>
->>>>>>> ddaaa10e6f69a2f615cb6968de3d222cc33033f8
   );
 }
 
 const styles = StyleSheet.create({
+  container:{
+    flex:1,
+  },
   scrollContainer: {
     paddingHorizontal: 20,
-<<<<<<< HEAD
-    paddingVertical: 20,
-=======
     paddingVertical: 30,
->>>>>>> ddaaa10e6f69a2f615cb6968de3d222cc33033f8
   },
   carouselContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 5,
+    height: 200,
   },
   username: {
     alignItems: 'center',
@@ -171,9 +128,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 18,
   },
-<<<<<<< HEAD
-});
-=======
   navigationContainer: {
     flexDirection: 'row', // added this line
     justifyContent: 'space-between',
@@ -241,4 +195,3 @@ const styles = StyleSheet.create({
 });
 
 export default UserProfile;
->>>>>>> ddaaa10e6f69a2f615cb6968de3d222cc33033f8
