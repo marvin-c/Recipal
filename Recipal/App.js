@@ -10,18 +10,15 @@ import UserProfile from './Screens/UserProfile';
 import HomeScreen from './Screens/HomeScreen';
 import CategoriesScreen from './Screens/CategoriesScreen';
 import SearchScreen from './Screens/SearchScreen';
+import RecipePage from './Screens/RecipePage';
+
 
 const Stack = createStackNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Profile">
-        <Stack.Screen
-          name='Profile'
-          component={UserProfile}
-          options={{headerShown: false}}
-          />
+      <Stack.Navigator initialRouteName="Splash">
         <Stack.Screen
           name="Splash"
           component={SplashScreen}
@@ -61,6 +58,16 @@ const App = () => {
           name="Search"
           component={SearchScreen}
           options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="RecipePage"
+          component={RecipePage}
+          options={{ headerShown: false }}
+        />        
+        <Stack.Screen
+          name='Profile'
+          component={UserProfile}
+          options={{headerShown: false}}
         />
       </Stack.Navigator>
     </NavigationContainer>

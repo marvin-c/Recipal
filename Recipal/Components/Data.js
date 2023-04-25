@@ -1,3 +1,38 @@
+const Data = [  //This code contains the image file path arrays for the Carousels displayed on the User Profile page
+  {
+    id: 0,
+    title: 'Carousel 1',
+    images: [
+      require('../assets/recipe1.png'),
+      require('../assets/recipe2.png'),
+      require('../assets/recipe3.png'),
+    ],
+  },
+  {
+    id: 1,
+    title: 'Carousel 2',
+    images: [
+      require('../assets/recipe4.png'),
+      require('../assets/recipe5.png'),
+      require('../assets/recipe6.png'),
+    ],
+  },
+  {
+    id: 2,
+    title: 'Carousel 3',
+    images: [
+      require('../assets/recipe7.png'),
+      require('../assets/recipe8.png'),
+      require('../assets/recipe1.png'),
+      require('../assets/addrecipe.png'),
+    ],
+  },
+];
+
+export default Data;
+
+
+/*  //This is the old code for web images
 const Data = [
   {
     imgUrl: require("../assets/recipe1.png"),
@@ -14,3 +49,4 @@ const Data = [
 ];
 
 export default Data;
+*/

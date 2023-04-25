@@ -8,7 +8,11 @@ const CarouselCardItem = ({ item, index }) => {
   return (
     <View style={styles.container} key={index}>
       <Image
+<<<<<<< HEAD
         source={item.imgUrl}
+=======
+        source={item}
+>>>>>>> ddaaa10e6f69a2f615cb6968de3d222cc33033f8
         style={styles.image}
       />
       <Text style={styles.header}>{item.header}</Text>
@@ -54,3 +58,11 @@ const styles = StyleSheet.create({
 })
 
 export default CarouselCardItem;
+
+/*
+<View style={styles.container} key={index}>
+<Image
+  source={item.imgUrl} //source={{ uri: item.imgUrl }} - this is for displaying web images from the Data.js component
+  style={styles.image}
+/>
+*/
