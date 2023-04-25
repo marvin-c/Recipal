@@ -1,6 +1,6 @@
-import React from 'react'
-import { View } from "react-native"
-import Carousel, { Pagination } from 'react-native-snap-carousel'
+import React from 'react';
+import { View } from 'react-native';
+import Carousel, { Pagination } from 'react-native-snap-carousel';
 import CarouselCardItem, { SLIDER_WIDTH, ITEM_WIDTH } from '../Components/CarouselCardItem';
 
 const CarouselCards = ({ images }) => {
@@ -24,10 +24,10 @@ const CarouselCards = ({ images }) => {
       />
       
     </View>
-  )
-}
+  );
+};
 
-export default CarouselCards
+export default CarouselCards;
 
 /*<Pagination // pagination add the little dots to the carousel, indicating what slide is currently in focus
         dotsLength={images.length}

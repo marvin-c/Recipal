@@ -11,6 +11,8 @@ const CarouselCardItem = ({ item, index }) => {
         source={item}
         style={styles.image}
       />
+      <Text style={styles.header}>{item.header}</Text>
+      <Text style={styles.body}>{item.body}</Text>
     </View>
   )
 }
@@ -36,18 +38,18 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   header: {
-    color: "white",
-    fontSize: 28,
+    color: "black",
+    fontSize: 20,
     fontWeight: "bold",
-    paddingLeft: 20,
-    paddingTop: 20
+    paddingLeft: 10,
+    paddingTop: 10
   },
   body: {
-    color: "white",
-    fontSize: 18,
-    paddingLeft: 20,
-    paddingLeft: 20,
-    paddingRight: 20
+    color: "black",
+    fontSize: 16,
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingBottom: 10
   }
 })
 
