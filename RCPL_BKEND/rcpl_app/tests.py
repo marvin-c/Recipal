@@ -3,6 +3,12 @@ from django.test import TestCase
 from .models import Recipe, Category
 from datetime import date
 
+from django.urls import reverse, resolve, path, include
+from rest_framework import routers
+from rcpl_app.api.views import RecipeViewSet, CategoryViewSet
+from rcpl_app.api.urls import urlpatterns
+from rcpl_app.api.serializers import RecipeModelSerializer
+from rcpl_app.models import Recipe, Category
 
 # 1 Test that a Recipe can be created with all required fields:
 class RecipeModelTestCase(TestCase):
@@ -96,3 +102,38 @@ class RecipeModelTestCase(TestCase):
         category_id = self.category.id
         self.category.delete()
         self.assertFalse(Category.objects.filter(id=category_id).exists())
+
+
+class TestAPIUrls(TestCase):
+    
+    # 7 verifies that the URL for the recipe list view (/recipes/) resolves to the RecipeViewSet's list method
+    def test_recipe_list_url(self):
+        url = reverse('recipe-list')
+        self.assertEqual(resolve(url).func.__name__, RecipeViewSet.as_view({'get': 'list'}).__name__)
+        
+    # 8 verifies that the URL for the category detail view (/categories/<int:pk>/) with a primary key of 1 resolves to the CategoryViewSet's retrieve method.    
+    def test_category_detail_url(self):
+        url = reverse('category-detail', kwargs={'pk': 1})
+        self.assertEqual(resolve(url).func.__name__, CategoryViewSet.as_view({'get': 'retrieve'}).__name__)
+
+    def test_recipes_url_resolves(self):
+        url = reverse('recipe-list')
+        self.assertEqual(resolve(url).func.__name__, RecipeViewSet.as_view({'get': 'list'}).__name__)        
+        
+# 10 test if expected fields contains and that the data in those fields is correct. 
+class RecipeModelSerializerTestCase(TestCase):
+
+    def setUp(self):
+        self.recipe = Recipe.objects.create(
+            title="test_recipe",
+            description="test_description",
+            category="breakfast",
+            ingredients='Test recipe ingredients',
+            method='Test recipe method',
+            date=date.today(), 
+        )
+        self.serializer = RecipeModelSerializer(instance=self.recipe)
+
+    def test_contains_expected_fields(self):
+        data = self.serializer.data
+        self.assertCountEqual(data.keys(), ['id', 'title', 'description', 'category', 'ingredients', 'method', 'image', 'date'])
