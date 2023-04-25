@@ -11,6 +11,7 @@ import HomeScreen from './Screens/HomeScreen';
 import CategoriesScreen from './Screens/CategoriesScreen';
 import SearchScreen from './Screens/SearchScreen';
 import RecipePage from './Screens/RecipePage';
+import CustomSideMenu from './Screens/SideMenu';
 
 
 const Stack = createStackNavigator();
@@ -67,6 +68,11 @@ const App = () => {
         <Stack.Screen
           name='Profile'
           component={UserProfile}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="CustomSideMenu"
+          component={CustomSideMenu}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

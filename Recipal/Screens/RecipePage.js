@@ -2,6 +2,7 @@ import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import SearchBar from '../Components/SearchBar';
 import * as Font from 'expo-font';
+import CustomSideMenu from './SideMenu';
 
 const RecipePage = ({ navigation }) => {
   const handleHomeScreen = () => {navigation.navigate('Home');}; //call the Landing page on button press
@@ -9,11 +10,14 @@ const RecipePage = ({ navigation }) => {
     return (
         <SafeAreaView>
             <ScrollView>
-                <View>
+                <View style={styles.overContainer}>
                     <View style={styles.header}>
                         <Text style={styles.headerText}>Recipal</Text>
                     </View>
                     <SearchBar />
+                    <View>
+                        <CustomSideMenu />
+                    </View>
 
 
                     <Text style={styles.title}>Recipe Name</Text>
@@ -35,7 +39,6 @@ const styles = StyleSheet.create({
     header: {
         paddingTop: 50,
         paddingBottom: 10,
-        // backgroundColor: '#FFC800',
         alignItems: 'center',
     },
     headerText: {
@@ -43,6 +46,10 @@ const styles = StyleSheet.create({
         fontWeight: '600',
         fontSize: 40,
         color: 'black',
+    },
+    overContainer: {
+        flex: 1,
+        height: 1600
     },
     title: {
         fontSize: 24,

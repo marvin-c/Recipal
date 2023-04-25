@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { SafeAreaView, View, Text, ImageBackground, StyleSheet, FlatList, Dimensions, Image } from 'react-native';
 import SearchBar from '../Components/SearchBar';
+import CustomSideMenu from './SideMenu';
 
 const CategoriesScreen = () => {
   const [categories, setCategories] = useState([]);
@@ -35,6 +36,9 @@ const CategoriesScreen = () => {
         <Text style={styles.headerText}>Recipal</Text>
       </View>
       <SearchBar />
+      <View>
+        <CustomSideMenu />
+      </View>
       <FlatList
         data={categories}
         renderItem={renderCategory}
