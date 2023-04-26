@@ -4,6 +4,8 @@ import CarouselCards from '../Components/CarouselCards';
 import { Pagination } from 'react-native-snap-carousel';
 import Data from '../Components/Data';
 import { FontAwesome, Feather } from 'react-native-vector-icons';
+import SearchBar from '../Components/SearchBar';
+import CustomSideMenu from './SideMenu';
 
 const UserProfile = ({ navigation }) => {
 
@@ -16,7 +18,9 @@ const UserProfile = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+
     <ScrollView contentContainerStyle={styles.scrollContainer}>
+
       <View style={styles.username}>
         <Image
           source={require('../assets/profile.png')} //User Profile Picture. Will need to be a prop or variable - Same for username below
@@ -25,7 +29,9 @@ const UserProfile = ({ navigation }) => {
           John Doe  
         </Text> 
       </View>
+
       
+
       <View style={styles.headerContainer}>
         <Text style={styles.header}>
           Recently Viewed
@@ -77,9 +83,12 @@ const UserProfile = ({ navigation }) => {
           <Text style={styles.userStatValue}>12</Text>
         </View>
       </View>
-          
 
     </ScrollView>
+
+    <View style={styles.sidemenuContainer}>
+        <CustomSideMenu/>
+    </View> 
 
     <View style={styles.navigationContainer}>
       <TouchableHighlight style={styles.homebutton} //Home navigation button
@@ -137,6 +146,10 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
+  },
+  sidemenuContainer: {
+    flex: 1,
+    bottom: '90%',
   },
   editbutton: {
     backgroundColor: '#FFC800',

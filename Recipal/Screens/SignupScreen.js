@@ -147,6 +147,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 0,
     marginVertical: 0,
   },
+  // text box styles input boxes name,icon, etc
   inputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
