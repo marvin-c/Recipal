@@ -13,6 +13,9 @@ import SearchScreen from './Screens/SearchScreen';
 import RecipePage from './Screens/RecipePage';
 import ProfileEdit from './Screens/ProfileEditScreen';
 import CustomSideMenu from './Screens/SideMenu';
+import AddRecipe from './Screens/AddRecipe';
+import ProfileButton from './Screens/ProfileButton';
+import BackButton from './Screens/BackButton';
 
 
 const Stack = createStackNavigator();
@@ -79,6 +82,21 @@ const App = () => {
         <Stack.Screen
           name='ProfileEdit'
           component={ProfileEdit}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="AddRecipe"
+          component={AddRecipe}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="ProfileButton"
+          component={ProfileButton}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="BackButton"
+          component={BackButton}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

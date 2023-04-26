@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, View, Text, ImageBackground, StyleSheet, FlatList, Dimensions, Image } from 'react-native';
+import { SafeAreaView, View, Text, ImageBackground, StyleSheet, FlatList, Dimensions, Image, ScrollView } from 'react-native';
 import SearchBar from '../Components/SearchBar';
 import CustomSideMenu from './SideMenu';
+import ProfileButton from './ProfileButton';
+import BackButton from './BackButton';
 
 const CategoriesScreen = () => {
   const [categories, setCategories] = useState([]);
@@ -32,25 +34,38 @@ const CategoriesScreen = () => {
 
   return (
     <SafeAreaView>
+    <ScrollView>
       <View style={styles.header}>
         <Text style={styles.headerText}>Recipal</Text>
       </View>
       <SearchBar />
       <View>
-        <CustomSideMenu />
-      </View>
-      <FlatList
+        <FlatList
         data={categories}
         renderItem={renderCategory}
         keyExtractor={(item) => item.id.toString()}
         numColumns={numColumns}
         contentContainerStyle={styles.container}
       />
+      </View>
+    </ScrollView>
+    <View style={styles.sideMenuContainer}>
+        <CustomSideMenu />
+    </View>
+    <BackButton />
+    <ProfileButton />
+      <View style={styles.sideMenuContainer}>
+        <CustomSideMenu />
+      </View>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
+  sideMenuContainer:{
+    flex: 1,
+        bottom: '79.3%'
+      },
   header: {
     paddingTop: 50,
     paddingBottom: 10,
@@ -63,7 +78,6 @@ const styles = StyleSheet.create({
     color: 'black',
   },
   container: {
-    backgroundColor: 'white',
     paddingTop: 10,
     paddingBottom: 100,
   },
