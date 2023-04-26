@@ -6,6 +6,7 @@ import SearchBar from '../Components/SearchBar';
 import * as Font from 'expo-font';
 import CustomSideMenu from './SideMenu';
 import AddRecipe from './AddRecipe';
+import ProfileButton from './ProfileButton';
 
 const HomeScreen = ({ navigation }) => {
   const [fontLoaded, setFontLoaded] = useState(false);
@@ -134,6 +135,7 @@ const HomeScreen = ({ navigation }) => {
           </View>
         </View>
       </ScrollView>
+      <ProfileButton />
       <View style={styles.sideMenuContainer}>
         <CustomSideMenu />
       </View>
@@ -145,7 +147,7 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   sideMenuContainer:{
     flex: 1,
-        bottom: '90%'
+        bottom: '79.3%'
       },
     overContainer: {
       flex: 1,

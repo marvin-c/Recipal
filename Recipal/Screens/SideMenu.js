@@ -21,7 +21,7 @@ const CustomSideMenu = () => {
               {showMenu && (
                 <SafeAreaView style={styles.overlaySafeAreaView}>
                   <View style={styles.overlay}>
-                    <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('Home')}>
+                    <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('Profile')}>
                       <Text style={styles.menuItemText}>Profile</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('Categories')}>
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
         padding: 20,
     },
     container: {
-        backgroundColor: 'white',
+        
         flex: 1
     },
     buttonP:{
