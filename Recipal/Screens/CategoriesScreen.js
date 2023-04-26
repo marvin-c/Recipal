@@ -3,7 +3,6 @@ import { SafeAreaView, View, Text, ImageBackground, StyleSheet, FlatList, Dimens
 import SearchBar from '../Components/SearchBar';
 import CustomSideMenu from './SideMenu';
 import ProfileButton from './ProfileButton';
-import BackButton from './BackButton';
 
 const CategoriesScreen = () => {
   const [categories, setCategories] = useState([]);
@@ -52,7 +51,6 @@ const CategoriesScreen = () => {
     <View style={styles.sideMenuContainer}>
         <CustomSideMenu />
     </View>
-    <BackButton />
     <ProfileButton />
       <View style={styles.sideMenuContainer}>
         <CustomSideMenu />
@@ -64,7 +62,7 @@ const CategoriesScreen = () => {
 const styles = StyleSheet.create({
   sideMenuContainer:{
     flex: 1,
-        bottom: '79.3%'
+        bottom: '79.5%'
       },
   header: {
     paddingTop: 50,

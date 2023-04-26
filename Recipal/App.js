@@ -16,6 +16,7 @@ import CustomSideMenu from './Screens/SideMenu';
 import AddRecipe from './Screens/AddRecipe';
 import ProfileButton from './Screens/ProfileButton';
 import BackButton from './Screens/BackButton';
+import UserRecipe from './Screens/UserRecipeScreen';
 
 
 const Stack = createStackNavigator();
@@ -23,7 +24,7 @@ const Stack = createStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Profile">
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
           name="Splash"
           component={SplashScreen}
@@ -97,6 +98,11 @@ const App = () => {
         <Stack.Screen
           name="BackButton"
           component={BackButton}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="UserRecipe"
+          component={UserRecipe}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
