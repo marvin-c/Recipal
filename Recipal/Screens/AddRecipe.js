@@ -9,8 +9,7 @@ const AddRecipe= () => {
                 <ScrollView>
                     <TouchableOpacity style={styles.buttonP} onPress={() => navigation.navigate('Profile')}>
                         <Image 
-                            source={require('../assets/addrecipe.png')} 
-                            style={{ width: 100, height: 100, borderRadius: 50 }}
+                            source={require('../assets/emptybtn.png')} 
                         />
                     </TouchableOpacity>
                 </ScrollView>

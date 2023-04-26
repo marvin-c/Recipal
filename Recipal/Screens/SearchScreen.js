@@ -5,6 +5,8 @@ import SearchBar from "../Components/SearchBar";
 import { StatusBar } from 'expo-status-bar';
 import * as Font from 'expo-font';
 import CustomSideMenu from './SideMenu';
+import ProfileButton from './ProfileButton';
+import BackButton from './BackButton';
 
 const SearchScreen = () => {
     const [fontLoaded, setFontLoaded] = useState(false);
@@ -34,9 +36,7 @@ const SearchScreen = () => {
                     <Text style={styles.headerText}>Recipal</Text>
                 </View>
                 <SearchBar />
-                <View>
-                    <CustomSideMenu />
-                </View>
+                
                 <View style={styles.row}>
                     <View style={styles.screen}>
                         <Text>List of Recipes under the category {title}</Text>
@@ -46,12 +46,21 @@ const SearchScreen = () => {
                 </View>
             </View>
         </ScrollView>
+        <ProfileButton />
+        <BackButton />
+        <View style={styles.sideMenuContainer}>
+            <CustomSideMenu />
+        </View>
         </SafeAreaView>
         
     );
 }
 
 const styles = StyleSheet.create({
+    sideMenuContainer:{
+        flex: 1,
+            bottom: '79.3%'
+          },
     header: {
         paddingTop: 50,
         paddingBottom: 10,
