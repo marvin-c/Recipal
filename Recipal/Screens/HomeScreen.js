@@ -141,6 +141,7 @@ const styles = StyleSheet.create({
       },
     overContainer: {
       flex: 1,
+      backgroundColor: 'white'
     },
     header: {
         paddingTop: 50,

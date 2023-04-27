@@ -17,6 +17,7 @@ import AddRecipe from './Screens/AddRecipe';
 import ProfileButton from './Screens/ProfileButton';
 import BackButton from './Screens/BackButton';
 import UserRecipe from './Screens/UserRecipeScreen';
+import HomeButton from './Components/HomeButton';
 
 
 const Stack = createStackNavigator();
@@ -103,6 +104,11 @@ const App = () => {
         <Stack.Screen
           name="UserRecipe"
           component={UserRecipe}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="HomeButton"
+          component={HomeButton}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
