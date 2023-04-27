@@ -5,7 +5,7 @@ import { Pagination } from 'react-native-snap-carousel';
 import Data from '../Components/Data';
 import { FontAwesome, Feather } from 'react-native-vector-icons';
 import SearchBar from '../Components/SearchBar';
-import CustomSideMenu from './SideMenu';
+import CustomSideMenu from '../Components/SideMenu';
 import PreferencesButton from '../Components/PreferencesButton';
 import HomeButton from '../Components/HomeButton';
 

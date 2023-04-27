@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, View, Text, ImageBackground, StyleSheet, FlatList, Dimensions, Image, ScrollView } from 'react-native';
+import { SafeAreaView, View, Text, ScrollView, ImageBackground, StyleSheet, FlatList, Dimensions, Image} from 'react-native';
 import SearchBar from '../Components/SearchBar';
-import CustomSideMenu from './SideMenu';
+import CustomSideMenu from '../Components/SideMenu';
 import ProfileButton from '../Components/ProfileButton';
+import HomeButton from '../Components/HomeButton';
 
 const CategoriesScreen = () => {
   const [categories, setCategories] = useState([]);
@@ -26,32 +27,40 @@ const CategoriesScreen = () => {
 
   const renderCategory = ({ item }) => (
     <View style={styles.category}>
-      <Image source={{ uri: item.image }} style={styles.image} />
-      <Text style={styles.title}>{item.title}</Text>
+      <View style={styles.categoryImageContainer}>
+        <Image source={{ uri: item.image }} style={styles.image} />
+        <Text style={styles.title}>{item.title}</Text>
+      </View>
+    </View>
+  );
+
+  const renderHeader = () => (
+    <View>
+      <View style={styles.header}>
+        <Text style={styles.headerText}>Recipal</Text>
+      </View>
+      <View style={{marginEnd: 70}}>
+        <SearchBar />
+      </View>
     </View>
   );
 
   return (
-    <SafeAreaView>
-    <ScrollView>
-      <View style={styles.header}>
-        <Text style={styles.headerText}>Recipal</Text>
-      </View>
-      <SearchBar />
-      <View>
+    <SafeAreaView style={styles.container}>
         <FlatList
         data={categories}
         renderItem={renderCategory}
         keyExtractor={(item) => item.id.toString()}
         numColumns={numColumns}
-        contentContainerStyle={styles.container}
+        contentContainerStyle={styles.flatListContainer}
+        ListHeaderComponent={renderHeader}
+        ListHeaderComponentStyle={styles.headerContainer}
       />
-      </View>
-    </ScrollView>
     <View style={styles.sideMenuContainer}>
         <CustomSideMenu />
     </View>
     <ProfileButton />
+    <HomeButton />
       <View style={styles.sideMenuContainer}>
         <CustomSideMenu />
       </View>
@@ -60,12 +69,20 @@ const CategoriesScreen = () => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
   sideMenuContainer:{
     flex: 1,
-        bottom: '79.5%'
-      },
+    bottom: '78%'
+    },
   header: {
     paddingTop: 50,
+    paddingBottom: 10,
+    alignItems: 'center',
+  },
+  headerContainer: {
     paddingBottom: 10,
     alignItems: 'center',
   },
@@ -75,7 +92,7 @@ const styles = StyleSheet.create({
     fontSize: 40,
     color: 'black',
   },
-  container: {
+  flatListContainer: {
     paddingTop: 10,
     paddingBottom: 100,
   },
@@ -86,6 +103,13 @@ const styles = StyleSheet.create({
     margin: 5,
     width: 100,
     height: 120,
+    flexDirection: 'column',
+    alignItems: 'center'
+  },  
+  categoryImageContainer: {
+    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'center',
   },
   image: {
     width: 100 - 10,
@@ -94,11 +118,13 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   title: {
-    marginTop: 5,
     fontSize: 16,
     fontWeight: 'bold',
     textAlign: 'center',
+    position: 'absolute',
+    bottom: '45%',
   },
+  
 });
 
 export default CategoriesScreen;

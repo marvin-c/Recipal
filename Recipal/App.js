@@ -12,11 +12,12 @@ import CategoriesScreen from './Screens/CategoriesScreen';
 import SearchScreen from './Screens/SearchScreen';
 import RecipePage from './Screens/RecipePage';
 import ProfileEdit from './Screens/ProfileEditScreen';
-import CustomSideMenu from './Screens/SideMenu';
+import CustomSideMenu from './Components/SideMenu';
 import AddRecipe from './Components/AddRecipe';
 import ProfileButton from './Components/ProfileButton';
 import BackButton from './Components/BackButton';
 import UserRecipe from './Screens/UserRecipeScreen';
+import HomeButton from './Components/HomeButton';
 
 
 const Stack = createStackNavigator();
@@ -103,6 +104,11 @@ const App = () => {
         <Stack.Screen
           name="UserRecipe"
           component={UserRecipe}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="HomeButton"
+          component={HomeButton}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

@@ -8,18 +8,13 @@ const BackButton = () => {
 
   function handlePress() {
     if (route.name === 'Search') {
-      navigation.navigate('Home');
+      navigation.navigate('Categories');
     }
     if (route.name === 'ProfileEdit') {
         navigation.navigate('Profile');
     }
     if (route.name === 'RecipePage') {
         navigation.navigate('Home');
-    }
-    if (route.name === 'Search') {
-        navigation.navigate('Home');
-    } else {
-      navigation.navigate('Profile');
     }
   }
 
