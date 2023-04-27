@@ -1,29 +1,16 @@
 import { View, Text, StyleSheet, Image, ImageBackground, TouchableOpacity, SafeAreaView } from "react-native";
 import { useNavigation, useRoute } from '@react-navigation/native';
-import Icon from 'react-native-vector-icons/Feather';
+import Icon from 'react-native-vector-icons/Entypo';
 
-const BackButton = () => {
+const HomeButton = () => {
   const navigation = useNavigation();
-  const route = useRoute();
-
-  function handlePress() {
-    if (route.name === 'Search') {
-      navigation.navigate('Categories');
-    }
-    if (route.name === 'ProfileEdit') {
-        navigation.navigate('Profile');
-    }
-    if (route.name === 'RecipePage') {
-        navigation.navigate('Home');
-    }
-  }
-
+  
   return (
     <View style={styles.container}>
       <View style={styles.screen}>
         <View style={styles.buttonP}>
-          <TouchableOpacity onPress={handlePress}>
-            <Icon name='arrow-left-circle' size={35} />
+          <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+            <Icon name='home' size={33} style={{marginEnd: 10, marginBottom: 5}}/>
           </TouchableOpacity>
         </View>
       </View>
@@ -52,4 +39,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default BackButton;
+export default HomeButton;
