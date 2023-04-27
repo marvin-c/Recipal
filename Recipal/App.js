@@ -12,10 +12,10 @@ import CategoriesScreen from './Screens/CategoriesScreen';
 import SearchScreen from './Screens/SearchScreen';
 import RecipePage from './Screens/RecipePage';
 import ProfileEdit from './Screens/ProfileEditScreen';
-import CustomSideMenu from './Screens/SideMenu';
-import AddRecipe from './Screens/AddRecipe';
-import ProfileButton from './Screens/ProfileButton';
-import BackButton from './Screens/BackButton';
+import CustomSideMenu from './Components/SideMenu';
+import AddRecipe from './Components/AddRecipe';
+import ProfileButton from './Components/ProfileButton';
+import BackButton from './Components/BackButton';
 import UserRecipe from './Screens/UserRecipeScreen';
 import HomeButton from './Components/HomeButton';
 
