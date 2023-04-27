@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { SafeAreaView, View, Text, ImageBackground, StyleSheet, FlatList, Dimensions, Image, ScrollView } from 'react-native';
 import SearchBar from '../Components/SearchBar';
 import CustomSideMenu from './SideMenu';
-import ProfileButton from './ProfileButton';
+import ProfileButton from '../Components/ProfileButton';
 
 const CategoriesScreen = () => {
   const [categories, setCategories] = useState([]);

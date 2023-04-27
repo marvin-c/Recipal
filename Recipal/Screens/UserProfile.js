@@ -6,6 +6,8 @@ import Data from '../Components/Data';
 import { FontAwesome, Feather } from 'react-native-vector-icons';
 import SearchBar from '../Components/SearchBar';
 import CustomSideMenu from './SideMenu';
+import PreferencesButton from '../Components/PreferencesButton';
+import HomeButton from '../Components/HomeButton';
 
 const UserProfile = ({ navigation }) => {
 
@@ -90,19 +92,9 @@ const UserProfile = ({ navigation }) => {
         <CustomSideMenu/>
     </View> 
 
-    <View style={styles.navigationContainer}>
-      <TouchableHighlight style={styles.homebutton} //Home navigation button
-          underlayColor="rgba(255, 200, 0, 0.75)" //Downpress button
-          onPress={handleHomePress}>
-          <FontAwesome name="home" size={36} color="black" style={styles.inputIcon}/>
-      </TouchableHighlight>
+    <HomeButton/>
 
-      <TouchableHighlight style={styles.editbutton} // User profile preference settings etc
-        underlayColor="rgba(255, 200, 0, 0.75)" //Downpress button
-        onPress={handleProfileEdit}>
-        <FontAwesome name="sliders" size={36} color="black" style={styles.inputIcon}/>
-      </TouchableHighlight>
-    </View>
+    <PreferencesButton/>
     
   </View>
   );
@@ -137,43 +129,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 18,
   },
-  navigationContainer: {
-    flexDirection: 'row', // added this line
-    justifyContent: 'space-between',
-    paddingHorizontal: 10,
-    paddingVertical: 10,
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-  },
   sidemenuContainer: {
     flex: 1,
     bottom: '90%',
-  },
-  editbutton: {
-    backgroundColor: '#FFC800',
-    padding: 7,
-    borderRadius: 20,
-    marginVertical: 10,
-    marginHorizontal: 0,
-    shadowColor: 'black',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.8 ,
-    shadowRadius: 2,
-    elevation: 4,
-  },
-  homebutton: {
-    backgroundColor: '#FFC800',
-    padding: 7,
-    borderRadius: 20,
-    marginVertical: 10,
-    marginHorizontal: 0,
-    shadowColor: 'black',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.8 ,
-    shadowRadius: 2,
-    elevation: 4,
   },
   //button text style properties
   buttonText: {

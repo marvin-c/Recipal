@@ -5,8 +5,8 @@ import SearchBar from "../Components/SearchBar";
 import { StatusBar } from 'expo-status-bar';
 import * as Font from 'expo-font';
 import CustomSideMenu from './SideMenu';
-import ProfileButton from './ProfileButton';
-import BackButton from './BackButton';
+import ProfileButton from '../Components/ProfileButton';
+import BackButton from '../Components/BackButton';
 
 const SearchScreen = () => {
     const [fontLoaded, setFontLoaded] = useState(false);

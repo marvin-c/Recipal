@@ -52,13 +52,13 @@ const CustomSideMenu = () => {
 
 const styles = StyleSheet.create({
     screen: {
-        padding: 20,
+        paddingTop: 10,
     },
     container: {
-        flex: 1
+        flex: 1,
     },
     buttonP:{
-        marginLeft: 300,
+        alignSelf: 'flex-end',
         borderTopStartRadius: 25,
         borderBottomLeftRadius: 25,
         bottom: 60,
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
       justifyContent: 'space-between',
     },
     overlay: {
-      position: 'absolute',
+      alignSelf: 'flex-end',
       top: 0,
       bottom: 0,
       left: 0,

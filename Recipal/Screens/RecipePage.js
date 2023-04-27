@@ -3,7 +3,7 @@ import React from 'react';
 import SearchBar from '../Components/SearchBar';
 import * as Font from 'expo-font';
 import CustomSideMenu from './SideMenu';
-import BackButton from './BackButton';
+import BackButton from '../Components/BackButton';
 
 const RecipePage = ({ navigation }) => {
   const handleHomeScreen = () => {navigation.navigate('Home');}; //call the Landing page on button press

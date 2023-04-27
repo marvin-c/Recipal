@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from "react";
 import {View, Alert, Text, Image, StyleSheet, TouchableOpacity, TouchableHighlight, TextInput, ScrollView} from 'react-native';
 import { FontAwesome, Feather } from 'react-native-vector-icons';
-
+import BackButton from "../Components/BackButton";
+import SaveButton from "../Components/SaveButton";
 
 const ProfileEdit = ({navigation}) => {
-    const handleBackPress = () => { //home button navigation handling
-    navigation.navigate('Profile')
-    };
-    const handleProSave = () => { //Profile Editor button navigation handling
-    navigation.navigate('ProfileSave')
-    };
+
     const profilePicUpload = () => { //Profile Picture file search and uploader
    Alert.alert('Profile pic upload')
     };
@@ -109,21 +105,11 @@ return (
             </View>
 
         </ScrollView>
+        
+        <BackButton/>
 
+        <SaveButton/>
 
-        <View style={styles.navigationContainer}>
-            <TouchableHighlight style={styles.backButton} //back navigation button
-                underlayColor="rgba(255, 200, 0, 0.75)" //Downpress button
-                onPress={handleBackPress}>
-                <FontAwesome name="arrow-circle-o-left" size={36} color="black" />
-            </TouchableHighlight>
-
-            <TouchableHighlight style={styles.saveButton} // User profile preference settings etc
-                underlayColor="rgba(255, 200, 0, 0.75)" //Downpress button
-                onPress={handleProSave}>
-                <FontAwesome name="save" size={36} color="black" />
-            </TouchableHighlight>
-        </View>
 
     </View>
 );
@@ -199,52 +185,6 @@ const styles = StyleSheet.create({
         height: 200,
         backgroundColor: '#FFFFFF',
       },
-
-
-    //page buttons
-    navigationContainer: {
-        flexDirection: 'row', // added this line
-        justifyContent: 'space-between',
-        paddingHorizontal: 10,
-        paddingVertical: 10,
-        position: 'absolute',
-        bottom: 0,
-        left: 0,
-        right: 0,
-    },
-    saveButton: {
-        backgroundColor: '#FFC800',
-        padding: 7,
-        borderRadius: 20,
-        marginVertical: 10,
-        marginHorizontal: 0,
-        shadowColor: 'black',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.8 ,
-        shadowRadius: 2,
-        elevation: 4,
-    },
-    backButton: {
-        backgroundColor: '#FFC800',
-        padding: 7,
-        borderRadius: 20,
-        marginVertical: 10,
-        marginHorizontal: 0,
-        shadowColor: 'black',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.8 ,
-        shadowRadius: 2,
-        elevation: 4,
-    },
-    //button text style properties
-    buttonText: {
-        color: 'black',
-        fontWeight: 'regular',
-        fontSize: 20,
-        textAlign: 'center',
-        flexDirection: 'row',
-    },
-
 })
 
 
