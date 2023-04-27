@@ -184,8 +184,8 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         height: 200,
         backgroundColor: '#FFFFFF',
+        marginBottom: 110,
       },
 })
-
 
 export default ProfileEdit;

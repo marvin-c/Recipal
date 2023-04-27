@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, TouchableHighlight,SafeAreaView, ScrollView, } from 'react-native';
 import CarouselCards from '../Components/CarouselCards';
 import { Pagination } from 'react-native-snap-carousel';
@@ -8,6 +8,8 @@ import SearchBar from '../Components/SearchBar';
 import CustomSideMenu from '../Components/SideMenu';
 import PreferencesButton from '../Components/PreferencesButton';
 import HomeButton from '../Components/HomeButton';
+import { ThemeContext } from '../Components/ThemeContext';
+
 
 const UserProfile = ({ navigation }) => {
 
@@ -18,8 +20,26 @@ const UserProfile = ({ navigation }) => {
     navigation.navigate('ProfileEdit')
   };
 
+  const { theme } = useContext(ThemeContext);
+
   return (
+    
     <View style={styles.container}>
+
+      <View style={{ backgroundColor: theme.colors.background }}>
+        <Text style={{ color: theme.colors.text }}>User Profile</Text>
+        <TouchableOpacity
+          onPress={() => console.log('Toggle theme')}
+          style={{
+            backgroundColor: theme.colors.primary,
+            padding: 10,
+            borderRadius: 5,
+            marginTop: 10,
+          }}
+        >
+          <Text style={{ color: theme.colors.text }}>Toggle Theme</Text>
+        </TouchableOpacity>
+      </View>
 
     <ScrollView contentContainerStyle={styles.scrollContainer}>
 
@@ -32,8 +52,6 @@ const UserProfile = ({ navigation }) => {
         </Text> 
       </View>
 
-      
-
       <View style={styles.headerContainer}>
         <Text style={styles.header}>
           Recently Viewed
@@ -41,7 +59,7 @@ const UserProfile = ({ navigation }) => {
       </View>
       <View style={styles.carouselContainer}>
         <CarouselCards images={Data[0].images}  //Recently viewed recipes 
-         />
+        />
       </View>
 
       <View style={styles.headerContainer}>
@@ -93,7 +111,6 @@ const UserProfile = ({ navigation }) => {
     </View> 
 
     <HomeButton/>
-
     <PreferencesButton/>
     
   </View>
@@ -101,6 +118,8 @@ const UserProfile = ({ navigation }) => {
 }
 
 const styles = StyleSheet.create({
+  darkTheme:{
+  },
   container:{
     flex:1,
   },
