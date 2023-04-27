@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, View, Text, ImageBackground, StyleSheet, FlatList, Dimensions, Image} from 'react-native';
+import { SafeAreaView, View, Text, ScrollView, ImageBackground, StyleSheet, FlatList, Dimensions, Image} from 'react-native';
 import SearchBar from '../Components/SearchBar';
 import CustomSideMenu from '../Components/SideMenu';
 import ProfileButton from '../Components/ProfileButton';
-import { ScrollView } from 'react-native-gesture-handler';
 import HomeButton from '../Components/HomeButton';
 
 const CategoriesScreen = () => {

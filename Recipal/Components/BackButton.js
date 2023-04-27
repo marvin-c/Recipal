@@ -1,6 +1,6 @@
-import { View, Text, StyleSheet, Image, ImageBackground, TouchableOpacity, SafeAreaView } from "react-native";
+import { View, Text, StyleSheet, Image, ImageBackground, TouchableOpacity, TouchableHighlight, SafeAreaView } from "react-native";
 import { useNavigation, useRoute } from '@react-navigation/native';
-import Icon from 'react-native-vector-icons/Feather';
+import { FontAwesome, Feather } from 'react-native-vector-icons';
 
 const BackButton = () => {
   const navigation = useNavigation();
@@ -21,11 +21,11 @@ const BackButton = () => {
   return (
     <View style={styles.container}>
       <View style={styles.screen}>
-        <View style={styles.buttonP}>
-          <TouchableOpacity onPress={handlePress}>
-            <Icon name='arrow-left-circle' size={35} />
-          </TouchableOpacity>
-        </View>
+        <TouchableHighlight style={styles.buttonP} //back navigation button
+          underlayColor="rgba(255, 200, 0, 0.75)" //Downpress button
+          onPress={handlePress}>
+          <Feather name="arrow-left-circle" size={36} color="black" style={styles.inputIcon}/>
+        </TouchableHighlight> 
       </View>
     </View>
   );
@@ -33,22 +33,27 @@ const BackButton = () => {
 
 const styles = StyleSheet.create({
   screen: {
-    paddingTop: 20,
-    marginRight: 80,
+    paddingTop: 10,
   },
   container: {
-    flex: 1
+    flex: 1,
+    alignSelf: 'flex-start',
   },
   buttonP:{
+    alignItems: 'center',
+    justifyContent: 'center',
     borderTopEndRadius: 25,
     borderBottomRightRadius: 25,
     bottom: 80,
     height: 50,
     width: 60,
     backgroundColor: '#FFC800',
-    borderColor: 'black',
-    alignItems: 'center',
-    justifyContent: 'center',
+    shadowColor: 'black',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8 ,
+    shadowRadius: 2,
+    elevation: 4,
+
   },
 })
 

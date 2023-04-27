@@ -1,17 +1,20 @@
-import { View, Text, StyleSheet, Image, ImageBackground, TouchableOpacity, SafeAreaView } from "react-native";
+import { View, Text, StyleSheet, Image, ImageBackground, TouchableOpacity, TouchableHighlight, SafeAreaView } from "react-native";
 import { useNavigation } from '@react-navigation/native';
  
 const ProfileButton = () => {
   const navigation = useNavigation()
+  function handlePress() {
+    navigation.navigate('Profile');
+  }
 
     return (
         <View style={styles.container}>
             <View style={styles.screen}>
-                <View style={styles.buttonP}>
-                <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
+                <TouchableHighlight style={styles.buttonP}
+                    underlayColor="rgba(255, 200, 0, 0.75)" //Downpress button
+                    onPress={handlePress}>
                     <Text>Profile</Text>
-                </TouchableOpacity>
-                </View>
+                </TouchableHighlight>
             </View>
         </View>
     );
@@ -19,22 +22,26 @@ const ProfileButton = () => {
 
 const styles = StyleSheet.create({
     screen: {
-        padding: 20,
+        paddingTop: 10,
     },
     container: {
-        flex: 1
+        flex: 1,
+        alignSelf: 'flex-end',
     },
     buttonP:{
-        marginLeft: 280,
+        alignItems: 'center',
+        justifyContent: 'center',
         borderTopStartRadius: 25,
         borderBottomLeftRadius: 25,
         bottom: 80,
         height: 50,
         width: 60,
         backgroundColor: '#FFC800',
-        borderColor: 'black',
-        alignItems: 'center',
-        justifyContent: 'center',
+        shadowColor: 'black',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.8 ,
+        shadowRadius: 2,
+        elevation: 4,
     },
 })
 
