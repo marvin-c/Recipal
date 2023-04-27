@@ -4,9 +4,9 @@ import React, { useState, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import SearchBar from '../Components/SearchBar';
 import * as Font from 'expo-font';
-import CustomSideMenu from './SideMenu';
-import ProfileButton from './ProfileButton';
-import AddRecipe from './AddRecipe';
+import CustomSideMenu from '../Components/SideMenu';
+import ProfileButton from '../Components/ProfileButton';
+import AddRecipe from '../Components/AddRecipe';
 
 const HomeScreen = ({ navigation }) => {
   const [fontLoaded, setFontLoaded] = useState(false);
