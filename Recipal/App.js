@@ -18,7 +18,7 @@ import ProfileButton from './Components/ProfileButton';
 import BackButton from './Components/BackButton';
 import UserRecipe from './Screens/UserRecipeScreen';
 import HomeButton from './Components/HomeButton';
-import ThemeProvider from './Components/ThemeContext'
+import {ThemeProvider} from './Components/ThemeContext';
 
 
 const Stack = createStackNavigator();
