@@ -8,7 +8,7 @@ export const ThemeProvider = ({ children }) => {
     colors: {
       background: '#fff',
       primary: '#007AFF',
-      text: '#333333',
+      text: 'black',
     },
   };
 

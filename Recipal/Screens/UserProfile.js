@@ -9,7 +9,7 @@ import CustomSideMenu from '../Components/SideMenu';
 import PreferencesButton from '../Components/PreferencesButton';
 import HomeButton from '../Components/HomeButton';
 import { ThemeContext } from '../Components/ThemeContext';
-
+import ThemedText from '../Components/ThemedText';
 
 const UserProfile = ({ navigation }) => {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -17,18 +17,16 @@ const UserProfile = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={{ backgroundColor: theme.colors.background }}>
-        
-        <Text style={{ color: theme.colors.text }}>User Profile</Text>
         <TouchableOpacity
           onPress={toggleTheme}
           style={{
             backgroundColor: theme.colors.primary,
             padding: 10,
             borderRadius: 5,
-            marginTop: 10,
+            marginTop: 0,
           }}
         >
-          <Text style={{ color: theme.colors.text }}>Toggle Theme</Text>
+          <ThemedText style={{ color: theme.colors.text }}>Toggle Theme</ThemedText>
         </TouchableOpacity>
       
 
@@ -38,15 +36,15 @@ const UserProfile = ({ navigation }) => {
           <Image
             source={require('../assets/profile.png')} //User Profile Picture. Will need to be a prop or variable - Same for username below
             style={{ width: 100, height: 100, borderRadius: 50 }}/>
-          <Text style={{ color: theme.colors.text }}>
-            John Doe  
-          </Text> 
+          <ThemedText> 
+          John Doe  
+            </ThemedText>
         </View>
 
         <View style={styles.headerContainer}>
-          <Text style={styles.header}>
+          <ThemedText style={styles.header}>
             Recently Viewed
-          </Text>
+          </ThemedText>
         </View>
         <View style={styles.carouselContainer}>
           <CarouselCards images={Data[0].images}  //Recently viewed recipes 
@@ -54,9 +52,9 @@ const UserProfile = ({ navigation }) => {
         </View>
 
         <View style={styles.headerContainer}>
-          <Text style={styles.header}>
+          <ThemedText style={styles.header}>
             Favourites
-          </Text>
+          </ThemedText>
         </View>
         <View style={styles.carouselContainer}>
           <CarouselCards images={Data[1].images} //User favourites carousel
@@ -64,9 +62,9 @@ const UserProfile = ({ navigation }) => {
         </View>
 
         <View style={styles.headerContainer}>
-          <Text style={styles.header}>
+          <ThemedText style={styles.header}>
             Your Recipes
-          </Text>
+          </ThemedText>
         </View>
         <View style={styles.carouselContainer}>
           <CarouselCards images={Data[2].images} //User added recipes carousel
