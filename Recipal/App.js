@@ -18,6 +18,7 @@ import ProfileButton from './Components/ProfileButton';
 import BackButton from './Components/BackButton';
 import UserRecipe from './Screens/UserRecipeScreen';
 import HomeButton from './Components/HomeButton';
+import {ThemeProvider} from './Components/ThemeContext';
 
 
 const Stack = createStackNavigator();
@@ -25,6 +26,7 @@ const Stack = createStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
+      <ThemeProvider>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
           name="Splash"
@@ -112,6 +114,7 @@ const App = () => {
           options={{headerShown: false}}
         />
       </Stack.Navigator>
+      </ThemeProvider>
     </NavigationContainer>
   );
 };

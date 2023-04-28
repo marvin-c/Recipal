@@ -1,101 +1,107 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, TouchableHighlight,SafeAreaView, ScrollView, } from 'react-native';
 import CarouselCards from '../Components/CarouselCards';
 import { Pagination } from 'react-native-snap-carousel';
-import Data from '../Components/Data';
+import Data from '../Components/Data'; //carousel image data
 import { FontAwesome, Feather } from 'react-native-vector-icons';
 import SearchBar from '../Components/SearchBar';
 import CustomSideMenu from '../Components/SideMenu';
 import PreferencesButton from '../Components/PreferencesButton';
 import HomeButton from '../Components/HomeButton';
+import { ThemeContext } from '../Components/ThemeContext';
+import ThemedText from '../Components/ThemedText';
 
 const UserProfile = ({ navigation }) => {
-
-  const handleHomePress = () => { //home button navigation handling
-  navigation.navigate('Home')
-  };
-  const handleProfileEdit = () => { //Profile Editor button navigation handling
-    navigation.navigate('ProfileEdit')
-  };
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
     <View style={styles.container}>
-
-    <ScrollView contentContainerStyle={styles.scrollContainer}>
-
-      <View style={styles.username}>
-        <Image
-          source={require('../assets/profile.png')} //User Profile Picture. Will need to be a prop or variable - Same for username below
-          style={{ width: 100, height: 100, borderRadius: 50 }}/>
-        <Text>
-          John Doe  
-        </Text> 
-      </View>
-
+      <View style={{ backgroundColor: theme.colors.background }}>
+        <TouchableOpacity
+          onPress={toggleTheme}
+          style={{
+            backgroundColor: theme.colors.primary,
+            padding: 10,
+            borderRadius: 5,
+            marginTop: 0,
+          }}
+        >
+          <ThemedText style={{ color: theme.colors.text }}>Toggle Theme</ThemedText>
+        </TouchableOpacity>
       
 
-      <View style={styles.headerContainer}>
-        <Text style={styles.header}>
-          Recently Viewed
-        </Text>
-      </View>
-      <View style={styles.carouselContainer}>
-        <CarouselCards images={Data[0].images}  //Recently viewed recipes 
-         />
-      </View>
+      <ScrollView contentContainerStyle={styles.scrollContainer}>
 
-      <View style={styles.headerContainer}>
-        <Text style={styles.header}>
-          Favourites
-        </Text>
-      </View>
-      <View style={styles.carouselContainer}>
-        <CarouselCards images={Data[1].images} //User favourites carousel
-        />
-      </View>
-
-      <View style={styles.headerContainer}>
-        <Text style={styles.header}>
-          Your Recipes
-        </Text>
-      </View>
-      <View style={styles.carouselContainer}>
-        <CarouselCards images={Data[2].images} //User added recipes carousel
-        />
-      </View>
-
-      <View style={styles.userStatsContainer} //user stats containers 
-      >
-        <View style={styles.userStat}>
-          <Text style={styles.userStatLabel}>Recipes submitted</Text>
-          <Text style={styles.userStatValue}>5</Text>
+        <View style={styles.username}>
+          <Image
+            source={require('../assets/profile.png')} //User Profile Picture. Will need to be a prop or variable - Same for username below
+            style={{ width: 100, height: 100, borderRadius: 50 }}/>
+          <ThemedText> 
+          John Doe  
+            </ThemedText>
         </View>
-      </View>
 
-      <View style={styles.userStatsContainer}>
-        <View style={styles.userStat}>
-          <Text style={styles.userStatLabel}>Average rating</Text>
-          <Text style={styles.userStatValue}>4.2</Text>
+        <View style={styles.headerContainer}>
+          <ThemedText style={styles.header}>
+            Recently Viewed
+          </ThemedText>
         </View>
-      </View>
-
-      <View style={styles.userStatsContainer}>
-        <View style={styles.userStat}>
-          <Text style={styles.userStatLabel}>Completed recipes</Text>
-          <Text style={styles.userStatValue}>12</Text>
+        <View style={styles.carouselContainer}>
+          <CarouselCards images={Data[0].images}  //Recently viewed recipes 
+          />
         </View>
-      </View>
 
-    </ScrollView>
+        <View style={styles.headerContainer}>
+          <ThemedText style={styles.header}>
+            Favourites
+          </ThemedText>
+        </View>
+        <View style={styles.carouselContainer}>
+          <CarouselCards images={Data[1].images} //User favourites carousel
+          />
+        </View>
 
-    <View style={styles.sidemenuContainer}>
-        <CustomSideMenu/>
-    </View> 
+        <View style={styles.headerContainer}>
+          <ThemedText style={styles.header}>
+            Your Recipes
+          </ThemedText>
+        </View>
+        <View style={styles.carouselContainer}>
+          <CarouselCards images={Data[2].images} //User added recipes carousel
+          />
+        </View>
 
-    <HomeButton/>
+        <View style={styles.userStatsContainer} //user stats containers 
+        >
+          <View style={styles.userStat}>
+            <Text style={styles.userStatLabel}>Recipes submitted</Text>
+            <Text style={styles.userStatValue}>5</Text>
+          </View>
+        </View>
 
-    <PreferencesButton/>
-    
+        <View style={styles.userStatsContainer}>
+          <View style={styles.userStat}>
+            <Text style={styles.userStatLabel}>Average rating</Text>
+            <Text style={styles.userStatValue}>4.2</Text>
+          </View>
+        </View>
+
+        <View style={styles.userStatsContainer}>
+          <View style={styles.userStat}>
+            <Text style={styles.userStatLabel}>Completed recipes</Text>
+            <Text style={styles.userStatValue}>12</Text>
+          </View>
+        </View>
+
+      </ScrollView>
+
+      <View style={styles.sidemenuContainer}>
+          <CustomSideMenu/>
+      </View> 
+
+      <HomeButton/>
+      <PreferencesButton/>
+    </View>
   </View>
   );
 }
