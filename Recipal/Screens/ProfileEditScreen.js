@@ -11,6 +11,7 @@ const ProfileEdit = ({navigation}) => {
     const profilePicUpload = () => { //Profile Picture file search and uploader
    Alert.alert('Profile pic upload')
     };
+    const [name, setName] = useState('');
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -47,8 +48,8 @@ return (
                 <TextInput
                     style={styles.input}
                     placeholder="Name"
-                    value={username}
-                    onChangeText={(value) => setUsername(value)}/>
+                    value={name}
+                    onChangeText={(value) => setName(value)}/>
             </View>
 
             <View style={styles.inputContainer}>
@@ -56,7 +57,7 @@ return (
                 <TextInput
                     style={styles.input}
                     placeholder="Username"
-                    value={email}
+                    value={username}
                     onChangeText={(value) => setEmail(value)}/>
             </View>
             
@@ -65,7 +66,7 @@ return (
                 <TextInput
                     style={styles.input}
                     placeholder="Email"
-                    value={password}
+                    value={email}
                     onChangeText={(value) => setPassword(value)}
                 secureTextEntry/>
             </View>  
@@ -75,7 +76,7 @@ return (
                 <TextInput
                     style={styles.input}
                     placeholder="Password"
-                    value={confirmPassword}
+                    value={password}
                     onChangeText={(value) => setConfirmPassword(value)}
                     secureTextEntry/>
             </View>
@@ -97,22 +98,22 @@ return (
                 <View style={styles.dietContainer}>
                 <View style={styles.iconWrapper}>
                 <ToggleIcon
-                    iconSource={require('../assets/Keto.png')}
+                    iconSource={require('../assets/keto.png')}
                     tickSource={require('../assets/tick.png')}
                     style={styles.icon}
                     label='Keto'/>
                     <ToggleIcon
-                    iconSource={require('../assets/FoodMap.png')}
+                    iconSource={require('../assets/foodMap.png')}
                     tickSource={require('../assets/tick.png')}
                     style={styles.icon}
                     label='FoodMap'/>
                     <ToggleIcon
-                    iconSource={require('../assets/Halal.png')}
+                    iconSource={require('../assets/halal.png')}
                     tickSource={require('../assets/tick.png')}
                     style={styles.icon}
                     label='Halal'/>
                     <ToggleIcon
-                    iconSource={require('../assets/Vegan.png')}
+                    iconSource={require('../assets/vegan.png')}
                     tickSource={require('../assets/tick.png')}
                     style={styles.icon}
                     label='Vegan'/>
@@ -132,22 +133,22 @@ return (
                 <View style={styles.allergyContainer}>
                 <View style={styles.iconWrapper}>
                 <ToggleIcon
-                    iconSource={require('../assets/Gluten.png')}
+                    iconSource={require('../assets/gluten.png')}
                     tickSource={require('../assets/tick.png')}
                     style={styles.icon}
                     label='Gluten'/>
                     <ToggleIcon
-                    iconSource={require('../assets/Eggs.png')}
+                    iconSource={require('../assets/eggs.png')}
                     tickSource={require('../assets/tick.png')}
                     style={styles.icon}
                     label='Eggs'/>
                     <ToggleIcon
-                    iconSource={require('../assets/TreeNuts.png')}
+                    iconSource={require('../assets/treeNuts.png')}
                     tickSource={require('../assets/tick.png')}
                     style={styles.icon}
                     label='TreeNuts'/>
                     <ToggleIcon
-                    iconSource={require('../assets/Fish.png')}
+                    iconSource={require('../assets/fish.png')}
                     tickSource={require('../assets/tick.png')}
                     style={styles.icon}
                     label='Fish'/>
@@ -182,7 +183,7 @@ return (
                     style={styles.icon}
                     label='Sesame'/>
                     <ToggleIcon
-                    iconSource={require('../assets/Dairy.png')}
+                    iconSource={require('../assets/dairy.png')}
                     tickSource={require('../assets/tick.png')}
                     style={styles.icon}
                     label='Dairy'/>
