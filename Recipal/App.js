@@ -19,6 +19,8 @@ import BackButton from './Components/BackButton';
 import UserRecipe from './Screens/UserRecipeScreen';
 import HomeButton from './Components/HomeButton';
 import {ThemeProvider} from './Components/ThemeContext';
+import StepByStepScreen from './Screens/StepByStepScreen';
+import StepButton from './Components/StepByStepButton';
 
 
 const Stack = createStackNavigator();
@@ -111,6 +113,16 @@ const App = () => {
         <Stack.Screen
           name="HomeButton"
           component={HomeButton}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="StepByStep"
+          component={StepByStepScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="StepButton"
+          component={StepButton}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

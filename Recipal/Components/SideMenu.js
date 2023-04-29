@@ -5,6 +5,8 @@ import { useState, useContext } from 'react';
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ThemeContext } from '../Components/ThemeContext';
 import ThemedText from '../Components/ThemedText';
+import StepByStepScreen from "../Screens/StepByStepScreen";
+
  
 const CustomSideMenu = () => {
   const navigation = useNavigation()
@@ -33,7 +35,7 @@ const CustomSideMenu = () => {
                     <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('Categories')}>
                       <Text style={styles.menuItemText}>Categories</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.menuItem} onPress={() => console.log('Menu item 3 pressed')}>
+                    <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('StepByStep')}>
                       <Text style={styles.menuItemText}>Your Recipes</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.menuItem} onPress={() => console.log('Menu item 3 pressed')}>

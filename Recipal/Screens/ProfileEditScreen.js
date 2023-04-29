@@ -97,22 +97,22 @@ return (
                 <View style={styles.dietContainer}>
                 <View style={styles.iconWrapper}>
                 <ToggleIcon
-                    iconSource={require('../assets/keto.png')}
+                    iconSource={require('../assets/Keto.png')}
                     tickSource={require('../assets/tick.png')}
                     style={styles.icon}
                     label='Keto'/>
                     <ToggleIcon
-                    iconSource={require('../assets/foodMap.png')}
+                    iconSource={require('../assets/FoodMap.png')}
                     tickSource={require('../assets/tick.png')}
                     style={styles.icon}
                     label='FoodMap'/>
                     <ToggleIcon
-                    iconSource={require('../assets/halal.png')}
+                    iconSource={require('../assets/Halal.png')}
                     tickSource={require('../assets/tick.png')}
                     style={styles.icon}
                     label='Halal'/>
                     <ToggleIcon
-                    iconSource={require('../assets/vegan.png')}
+                    iconSource={require('../assets/Vegan.png')}
                     tickSource={require('../assets/tick.png')}
                     style={styles.icon}
                     label='Vegan'/>
@@ -132,22 +132,22 @@ return (
                 <View style={styles.allergyContainer}>
                 <View style={styles.iconWrapper}>
                 <ToggleIcon
-                    iconSource={require('../assets/gluten.png')}
+                    iconSource={require('../assets/Gluten.png')}
                     tickSource={require('../assets/tick.png')}
                     style={styles.icon}
                     label='Gluten'/>
                     <ToggleIcon
-                    iconSource={require('../assets/eggs.png')}
+                    iconSource={require('../assets/Eggs.png')}
                     tickSource={require('../assets/tick.png')}
                     style={styles.icon}
                     label='Eggs'/>
                     <ToggleIcon
-                    iconSource={require('../assets/treeNuts.png')}
+                    iconSource={require('../assets/TreeNuts.png')}
                     tickSource={require('../assets/tick.png')}
                     style={styles.icon}
                     label='TreeNuts'/>
                     <ToggleIcon
-                    iconSource={require('../assets/fish.png')}
+                    iconSource={require('../assets/Fish.png')}
                     tickSource={require('../assets/tick.png')}
                     style={styles.icon}
                     label='Fish'/>
@@ -182,7 +182,7 @@ return (
                     style={styles.icon}
                     label='Sesame'/>
                     <ToggleIcon
-                    iconSource={require('../assets/dairy.png')}
+                    iconSource={require('../assets/Dairy.png')}
                     tickSource={require('../assets/tick.png')}
                     style={styles.icon}
                     label='Dairy'/>
