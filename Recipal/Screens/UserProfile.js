@@ -17,17 +17,7 @@ const UserProfile = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={{ backgroundColor: theme.colors.background }}>
-        <TouchableOpacity
-          onPress={toggleTheme}
-          style={{
-            backgroundColor: theme.colors.primary,
-            padding: 10,
-            borderRadius: 5,
-            marginTop: 0,
-          }}
-        >
-          <ThemedText style={{ color: theme.colors.text }}>Toggle Theme</ThemedText>
-        </TouchableOpacity>
+        
       
 
       <ScrollView contentContainerStyle={styles.scrollContainer}>

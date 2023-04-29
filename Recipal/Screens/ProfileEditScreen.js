@@ -3,6 +3,8 @@ import {View, Alert, Text, Image, StyleSheet, TouchableOpacity, TouchableHighlig
 import { FontAwesome, Feather } from 'react-native-vector-icons';
 import BackButton from "../Components/BackButton";
 import SaveButton from "../Components/SaveButton";
+import ToggleIcon from "../Components/ToggleIcon";
+
 
 const ProfileEdit = ({navigation}) => {
 
@@ -93,23 +95,125 @@ return (
                 Dietary Requirements
                 </Text>
                 <View style={styles.dietContainer}>
+                <View style={styles.iconWrapper}>
+                <ToggleIcon
+                    iconSource={require('../assets/keto.png')}
+                    tickSource={require('../assets/tick.png')}
+                    style={styles.icon}
+                    label='Keto'/>
+                    <ToggleIcon
+                    iconSource={require('../assets/foodMap.png')}
+                    tickSource={require('../assets/tick.png')}
+                    style={styles.icon}
+                    label='FoodMap'/>
+                    <ToggleIcon
+                    iconSource={require('../assets/halal.png')}
+                    tickSource={require('../assets/tick.png')}
+                    style={styles.icon}
+                    label='Halal'/>
+                    <ToggleIcon
+                    iconSource={require('../assets/vegan.png')}
+                    tickSource={require('../assets/tick.png')}
+                    style={styles.icon}
+                    label='Vegan'/>
+                    <ToggleIcon
+                    iconSource={require('../assets/paleo.png')}
+                    tickSource={require('../assets/tick.png')}
+                    style={styles.icon}
+                    label="Paleo"/>
+                </View>
                 </View>
             </View>
 
-            <View style={styles.headerContainer}>
+            <View style={styles.headerContainer}>   
                 <Text style={styles.header}>
                 Food allergies <Text style={styles.text}>Exclude these ingredients</Text>
                 </Text>
                 <View style={styles.allergyContainer}>
+                <View style={styles.iconWrapper}>
+                <ToggleIcon
+                    iconSource={require('../assets/gluten.png')}
+                    tickSource={require('../assets/tick.png')}
+                    style={styles.icon}
+                    label='Gluten'/>
+                    <ToggleIcon
+                    iconSource={require('../assets/eggs.png')}
+                    tickSource={require('../assets/tick.png')}
+                    style={styles.icon}
+                    label='Eggs'/>
+                    <ToggleIcon
+                    iconSource={require('../assets/treeNuts.png')}
+                    tickSource={require('../assets/tick.png')}
+                    style={styles.icon}
+                    label='TreeNuts'/>
+                    <ToggleIcon
+                    iconSource={require('../assets/fish.png')}
+                    tickSource={require('../assets/tick.png')}
+                    style={styles.icon}
+                    label='Fish'/>
+                    <ToggleIcon
+                    iconSource={require('../assets/lupin.png')}
+                    tickSource={require('../assets/tick.png')}
+                    style={styles.icon}
+                    label='Lupin'/>
+                    <ToggleIcon
+                    iconSource={require('../assets/celery.png')}
+                    tickSource={require('../assets/tick.png')}
+                    style={styles.icon}
+                    label='Celery'/>
+                    <ToggleIcon
+                    iconSource={require('../assets/crustaceans.png')}
+                    tickSource={require('../assets/tick.png')}
+                    style={styles.icon}
+                    label='Crustaceans'/>
+                    <ToggleIcon
+                    iconSource={require('../assets/mustard.png')}
+                    tickSource={require('../assets/tick.png')}
+                    style={styles.icon}
+                    label='Mustard'/>
+                    <ToggleIcon
+                    iconSource={require('../assets/peanut.png')}
+                    tickSource={require('../assets/tick.png')}
+                    style={styles.icon}
+                    label='Peanuts'/>
+                    <ToggleIcon
+                    iconSource={require('../assets/sesame.png')}
+                    tickSource={require('../assets/tick.png')}
+                    style={styles.icon}
+                    label='Sesame'/>
+                    <ToggleIcon
+                    iconSource={require('../assets/dairy.png')}
+                    tickSource={require('../assets/tick.png')}
+                    style={styles.icon}
+                    label='Dairy'/>
+                    <ToggleIcon
+                    iconSource={require('../assets/molluscs.png')}
+                    tickSource={require('../assets/tick.png')}
+                    style={styles.icon}
+                    label='Molluscs'/>
+                    <ToggleIcon
+                    iconSource={require('../assets/sodium.png')}
+                    tickSource={require('../assets/tick.png')}
+                    style={styles.icon}
+                    label='Sodium'/>
+                    <ToggleIcon
+                    iconSource={require('../assets/soy.png')}
+                    tickSource={require('../assets/tick.png')}
+                    style={styles.icon}
+                    label='Soy'/>
+                    <ToggleIcon
+                    iconSource={require('../assets/sulphurdioxide.png')}
+                    tickSource={require('../assets/tick.png')}
+                    style={styles.icon}
+                    label='Preservatives'/>
+                </View>
                 </View>
             </View>
 
         </ScrollView>
         
         <BackButton/>
-
         <SaveButton/>
-
 
     </View>
 );
@@ -171,20 +275,32 @@ const styles = StyleSheet.create({
         fontSize: 18,
         paddingLeft: 10,
       },
-      dietContainer: {
+      dietContainer: {  //Dietary icon container
         borderWidth: 1,
         borderColor: '#FFC800',
         borderRadius: 10,
         height: 100,
         backgroundColor: '#FFFFFF',
       },
-      allergyContainer: {
+      allergyContainer: {   //food allergy icon container
         borderWidth: 1,
         borderColor: '#FFC800',
         borderRadius: 10,
-        height: 200,
+        height: 300,
         backgroundColor: '#FFFFFF',
         marginBottom: 110,
+      },
+      iconWrapper: {    
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        padding: 5,
+      },
+      icon: {
+        width: 50,
+        height: 50,
+        margin: 5,
       },
 })
 
