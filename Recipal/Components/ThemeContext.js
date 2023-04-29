@@ -7,7 +7,7 @@ export const ThemeProvider = ({ children }) => {
   const lightTheme = {
     colors: {
       background: '#fff',
-      primary: '#007AFF',
+      primary: '#FFC800',
       text: 'black',
     },
   };
@@ -15,8 +15,9 @@ export const ThemeProvider = ({ children }) => {
   const darkTheme = {
     colors: {
       background: '#333333',
-      primary: '#333333',
+      primary: '#FFC800',
       text: '#ffffff',
+      buttonText: 'black', 
     },
   };
 

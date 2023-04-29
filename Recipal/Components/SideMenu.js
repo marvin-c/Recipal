@@ -1,12 +1,15 @@
 import { View, Text, StyleSheet, Image, ImageBackground, TouchableOpacity } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Ionicons'
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { SafeAreaView } from "react-native-safe-area-context";
+import { ThemeContext } from '../Components/ThemeContext';
+import ThemedText from '../Components/ThemedText';
  
 const CustomSideMenu = () => {
   const navigation = useNavigation()
   const [showMenu, setShowMenu] = useState(false);
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
     return (
         <View style={styles.container}>
@@ -21,6 +24,9 @@ const CustomSideMenu = () => {
               {showMenu && (
                 <SafeAreaView style={styles.overlaySafeAreaView}>
                   <View style={styles.overlay}>
+                    <TouchableOpacity style={styles.menuItem} onPress={toggleTheme}>
+                      <Text style={styles.menuItemText}>Toggle Theme</Text>
+                    </TouchableOpacity>
                     <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('Profile')}>
                       <Text style={styles.menuItemText}>Profile</Text>
                     </TouchableOpacity>
