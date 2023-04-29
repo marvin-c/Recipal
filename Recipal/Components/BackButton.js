@@ -18,7 +18,10 @@ const BackButton = () => {
     }
     if (route.name === 'AboutUs') {
       navigation.navigate('Home');
-  }
+    }
+    if (route.name === 'UserRecipe') {
+      navigation.navigate('Home');
+    }
   }
 
   return (
