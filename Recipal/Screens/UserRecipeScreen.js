@@ -7,213 +7,222 @@ import BackButton from "../Components/BackButton";
 import SaveButton from "../Components/SaveButton"; 
 import { ThemeContext } from '../Components/ThemeContext';
 import ThemedText from '../Components/ThemedText';
+import ThemedTextBox from '../Components/ThemedTextBox';
 
 const UserRecipe = ({navigation}) => {
+  const recipePicUpload = () => { //Recipe Picture file search and uploader
+        Alert.alert('Recipe pic upload')
+  };
   const { theme, toggleTheme } = useContext(ThemeContext);
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [recipeTitle, setRecipe] = useState('');
+  const [description, setDescription] = useState('');
+  const [category, setCategory] = useState('');
+  const [ingredients, setIngredients] = useState('');
+  const [method, setMethod] = useState('');
 
     return (
         <View style={styles.container}>
+        <View style={{ backgroundColor: theme.colors.background }}>
 
-        <ScrollView style={styles.scrollContainer}>
+        <ScrollView contentContainerStyle={styles.scrollContainer}>
 
             <View style={styles.headerContainer}>
-                <Text style={styles.header}>
-                User Details
-                </Text>
+                <ThemedText style={styles.header}>
+                Add your own recipe
+                </ThemedText>
             </View>
 
             <View style={styles.inputContainer}>
-                <FontAwesome name="user" size={24} color="black" style={styles.inputIcon}/>
                 <TextInput
                     style={styles.input}
-                    placeholder="Name"
-                    value={username}
-                    onChangeText={(value) => setUsername(value)}/>
+                    placeholder="Recipe Title"
+                    value={recipeTitle}
+                    onChangeText={(value) => setRecipe(value)}/>
             </View>
 
-            <View style={styles.inputContainer}>
-                <FontAwesome name="vcard" size={24} color="black" style={styles.inputIcon}/>
-                <TextInput
-                    style={styles.input}
-                    placeholder="Username"
-                    value={email}
-                    onChangeText={(value) => setEmail(value)}/>
+            <View style={styles.imagesContainer}>
+                <Text style={styles.imageInput}>Upload images of your creation</Text>
+
+                    <View style={styles.uploadButtonContainer}>
+                        <TouchableHighlight style={styles.ProPicUpload}
+                            underlayColor="rgba(255, 200, 0, 0.75)" //Downpress button
+                            onPress={recipePicUpload}>
+                            <FontAwesome name="camera" size={28} color="black"/> 
+                        </TouchableHighlight>
+                    </View>
             </View>
             
-            <View style={styles.inputContainer}>
-                <FontAwesome name="envelope" size={24} color="black" style={styles.inputIcon}/>
+            <View style={styles.descriptionContainer}>
                 <TextInput
                     style={styles.input}
-                    placeholder="Email"
-                    value={password}
-                    onChangeText={(value) => setPassword(value)}
-                secureTextEntry/>
+                    placeholder="Description"
+                    value={description}
+                    onChangeText={(value) => setDescription(value)}
+                />
             </View>  
             
-            <View style={styles.inputContainer}>
-                <FontAwesome name="lock" size={24} color="black" style={styles.inputIcon}/>
+            <View style={styles.categoryContainer}>
                 <TextInput
                     style={styles.input}
-                    placeholder="Password"
-                    value={confirmPassword}
-                    onChangeText={(value) => setConfirmPassword(value)}
-                    secureTextEntry/>
+                    placeholder="Category"
+                    value={category}
+                    onChangeText={(value) => setCategory(value)}
+                    />
             </View>
 
-            <View style={styles.inputContainer}>
-                <FontAwesome name="flag" size={24} color="black" style={styles.inputIcon}/>
+            <View style={styles.ingredientsContainer}>
                 <TextInput
                     style={styles.input}
-                    placeholder="Country"
-                    value={confirmPassword}
-                    onChangeText={(value) => setConfirmPassword(value)}
-                    secureTextEntry/>
+                    placeholder="Ingredients"
+                    value={ingredients}
+                    onChangeText={(value) => setIngredients(value)}
+                    />
             </View>
 
-            <View style={styles.headerContainer}>
-                <Text style={styles.header}>
-                Dietary Requirements
-                </Text>
-                <View style={styles.dietContainer}>
-                <View style={styles.iconWrapper}>
-                <ToggleIcon
-                    iconSource={require('../assets/keto.png')}
-                    tickSource={require('../assets/tick.png')}
-                    style={styles.icon}
-                    label='Keto'/>
-                    <ToggleIcon
-                    iconSource={require('../assets/foodMap.png')}
-                    tickSource={require('../assets/tick.png')}
-                    style={styles.icon}
-                    label='FoodMap'/>
-                    <ToggleIcon
-                    iconSource={require('../assets/halal.png')}
-                    tickSource={require('../assets/tick.png')}
-                    style={styles.icon}
-                    label='Halal'/>
-                    <ToggleIcon
-                    iconSource={require('../assets/vegan.png')}
-                    tickSource={require('../assets/tick.png')}
-                    style={styles.icon}
-                    label='Vegan'/>
-                    <ToggleIcon
-                    iconSource={require('../assets/paleo.png')}
-                    tickSource={require('../assets/tick.png')}
-                    style={styles.icon}
-                    label="Paleo"/>
-                </View>
-                </View>
-            </View>
-
-            <View style={styles.headerContainer}>   
-                <Text style={styles.header}>
-                Food allergies <Text style={styles.text}>Exclude these ingredients</Text>
-                </Text>
-                <View style={styles.allergyContainer}>
-                <View style={styles.iconWrapper}>
-                <ToggleIcon
-                    iconSource={require('../assets/gluten.png')}
-                    tickSource={require('../assets/tick.png')}
-                    style={styles.icon}
-                    label='Gluten'/>
-                    <ToggleIcon
-                    iconSource={require('../assets/eggs.png')}
-                    tickSource={require('../assets/tick.png')}
-                    style={styles.icon}
-                    label='Eggs'/>
-                    <ToggleIcon
-                    iconSource={require('../assets/treeNuts.png')}
-                    tickSource={require('../assets/tick.png')}
-                    style={styles.icon}
-                    label='TreeNuts'/>
-                    <ToggleIcon
-                    iconSource={require('../assets/fish.png')}
-                    tickSource={require('../assets/tick.png')}
-                    style={styles.icon}
-                    label='Fish'/>
-                    <ToggleIcon
-                    iconSource={require('../assets/lupin.png')}
-                    tickSource={require('../assets/tick.png')}
-                    style={styles.icon}
-                    label='Lupin'/>
-                    <ToggleIcon
-                    iconSource={require('../assets/celery.png')}
-                    tickSource={require('../assets/tick.png')}
-                    style={styles.icon}
-                    label='Celery'/>
-                    <ToggleIcon
-                    iconSource={require('../assets/crustaceans.png')}
-                    tickSource={require('../assets/tick.png')}
-                    style={styles.icon}
-                    label='Crustaceans'/>
-                    <ToggleIcon
-                    iconSource={require('../assets/mustard.png')}
-                    tickSource={require('../assets/tick.png')}
-                    style={styles.icon}
-                    label='Mustard'/>
-                    <ToggleIcon
-                    iconSource={require('../assets/peanut.png')}
-                    tickSource={require('../assets/tick.png')}
-                    style={styles.icon}
-                    label='Peanuts'/>
-                    <ToggleIcon
-                    iconSource={require('../assets/sesame.png')}
-                    tickSource={require('../assets/tick.png')}
-                    style={styles.icon}
-                    label='Sesame'/>
-                    <ToggleIcon
-                    iconSource={require('../assets/dairy.png')}
-                    tickSource={require('../assets/tick.png')}
-                    style={styles.icon}
-                    label='Dairy'/>
-                    <ToggleIcon
-                    iconSource={require('../assets/molluscs.png')}
-                    tickSource={require('../assets/tick.png')}
-                    style={styles.icon}
-                    label='Molluscs'/>
-                    <ToggleIcon
-                    iconSource={require('../assets/sodium.png')}
-                    tickSource={require('../assets/tick.png')}
-                    style={styles.icon}
-                    label='Sodium'/>
-                    <ToggleIcon
-                    iconSource={require('../assets/soy.png')}
-                    tickSource={require('../assets/tick.png')}
-                    style={styles.icon}
-                    label='Soy'/>
-                    <ToggleIcon
-                    iconSource={require('../assets/sulphurdioxide.png')}
-                    tickSource={require('../assets/tick.png')}
-                    style={styles.icon}
-                    label='Preservatives'/>
-                </View>
-                </View>
+            <View style={styles.methodContainer}>
+                <TextInput
+                    style={styles.input}
+                    placeholder="Method"
+                    value={method}
+                    onChangeText={(value) => setMethod(value)}
+                    />
             </View>
 
         </ScrollView>
         
         <BackButton/>
         <SaveButton/>
-
+    </View>
     </View>
     );
 }
 
 const styles = StyleSheet.create({
-    buttonP:{
-        marginTop: 200,
-        marginStart: 100,
-        height: 50,
-        width: 60,
-        backgroundColor: '#FFC800',
-        borderColor: 'black',
-        alignItems: 'center',
-        justifyContent: 'center',
+    container:{
+        flex: 1, 
     },
+    scrollContainer: {
+        paddingHorizontal: 20, 
+        paddingVertical: 50,
+        paddingBottom: 100, // add padding to the bottom
+    },
+    //user details and edit profile main contents
+    header: {
+        textAlign: 'left',
+        fontWeight: 'bold',
+        fontSize: 18,
+    },
+    text: {
+        textAlign: 'right',
+        fontWeight: 'normal',
+        fontSize: 12,
+    },
+     //input box styles
+    inputContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: '#FFFFFF',
+        borderWidth: 1,
+        borderColor: '#ccc',
+        borderRadius: 5,
+        height: 50,
+        marginHorizontal: 0,
+        marginVertical: 2,
+        paddingLeft: 10,
+    },
+    //recipe images style section
+    imagesContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: '#FFFFFF',
+        borderWidth: 1,
+        borderColor: '#ccc',
+        borderRadius: 5,
+        height: 250,
+        marginHorizontal: 0,
+        marginVertical: 2,
+        paddingLeft: 10,
+    },
+    imageInput: {
+        height: 50,
+        flex: 1,
+        fontWeight: 300,
+        fontSize: 18,
+        left: '15%',
+    },
+    uploadButtonContainer:{
+        backgroundColor: '#FFC800',
+        borderRadius: 10,
+        width: 40,
+        height: 35,
+        alignSelf: 'flex-start',
+        marginHorizontal: 5,
+        marginVertical: 5,
+    },
+    ProPicUpload:{
+        alignSelf: 'center',
+        marginTop: 3.5,
+    },
+    // description and recipe body style section
+    descriptionContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: '#FFFFFF',
+        borderWidth: 1,
+        borderColor: '#ccc',
+        borderRadius: 5,
+        height: 100,
+        marginHorizontal: 0,
+        marginVertical: 2,
+        paddingLeft: 10,
+    },
+    categoryContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: '#FFFFFF',
+        borderWidth: 1,
+        borderColor: '#ccc',
+        borderRadius: 5,
+        height: 50,
+        marginHorizontal: 0,
+        marginVertical: 2,
+        paddingLeft: 10,
+    },
+    ingredientsContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: '#FFFFFF',
+        borderWidth: 1,
+        borderColor: '#ccc',
+        borderRadius: 5,
+        height: 250,
+        marginHorizontal: 0,
+        marginVertical: 2,
+        paddingLeft: 10,
+    },
+    methodContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: '#FFFFFF',
+        borderWidth: 1,
+        borderColor: '#ccc',
+        borderRadius: 5,
+        height: 250,
+        marginHorizontal: 0,
+        marginVertical: 2,
+        paddingLeft: 10,
+    },
+    inputIcon: {
+        padding: 0,
+        color: '#FFC800',
+      },
+      input: {
+        height: 50,
+        flex: 1,
+        alignSelf: 'flex-start',
+        fontSize: 18,
+        paddingLeft: 10,
+      },
 })
 
 export default UserRecipe;
