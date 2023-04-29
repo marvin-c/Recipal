@@ -22,7 +22,7 @@ const CustomSideMenu = ({ onClose }) => {
         <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('Categories')}>
           <Text style={styles.menuItemText}>Categories</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.menuItem} onPress={() => console.log('Menu item "Your Recipes" pressed')}>
+        <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('StepByStep')}>
           <Text style={styles.menuItemText}>Your Recipes</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.menuItem} onPress={() => console.log('Menu item "favourites" pressed')}>

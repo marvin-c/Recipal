@@ -1,37 +1,37 @@
-import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, ScrollView, StyleSheet, Text, View, Image } from 'react-native';
 import React from 'react';
 import SearchBar from '../Components/SearchBar';
 import * as Font from 'expo-font';
+import CustomSideMenu from '../Components/SideMenu';
 import SideMenuButton from '../Components/SideMenuButton';
-import BackButton from './BackButton';
+import BackButton from '../Components/BackButton';
+import NextStepButton from '../Components/StepByStepButton';
 
-const RecipePage = ({ navigation }) => {
-  const handleHomeScreen = () => {navigation.navigate('Home');}; //call the Landing page on button press
+const StepByStepScreen = ({ navigation }) => {
     return (
         <SafeAreaView>
             <ScrollView>
                 <View style={styles.overContainer}>
                     <View style={styles.header}>
-                        <Text style={styles.headerText}>Recipal</Text>
+                        <Text style={styles.headerText}>Red Snapper with Tamarind Sauce</Text>
                     </View>
-                    <SearchBar />
+
                     <View>
-                        <SideMenuButton/>
+                    <Image 
+                        source={require('../assets/fish1.png')} 
+                        style={{  width: 320, height: 307, borderRadius: 10, marginStart: 20}}
+                    />
                     </View>
-
-
-                    <Text style={styles.title}>Recipe Name</Text>
-                    <Text style={styles.subttlCointainer}>Ingredients</Text>
-                    <Text>Ingredient 1</Text>
-                    <Text>Ingredient 2</Text>
-                    <Text>Ingredient 3</Text>
-                    <Text style={styles.subttlCointainer}>Instructions</Text>
-                    <Text>Step 1</Text>
-                    <Text>Step 2</Text>
-                    <Text>Step 3</Text>
+                        <Text style={styles.subttlContainer}>Instructions</Text>
+                        <Text style={styles.stepContainer}>Step 1</Text>
+                        <Text style={styles.insContainer}>Make sure the fish is well scaled and wipe down with a paper towel. Cut fish through to 
+                        the bone from head to tail at 3cm intervals on both sides.</Text>
                 </View>
             </ScrollView>
+            <SideMenuButton />
+            
             <BackButton />
+            <NextStepButton />
         </SafeAreaView>
     );
 }
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     },
     overContainer: {
         flex: 1,
-        height: 1600
+        height: 800
     },
     title: {
         fontSize: 24,
@@ -59,12 +59,22 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         marginLeft: 15,
     },
-    subttlCointainer: {
+    subttlContainer: {
         paddingLeft: 15,
         fontSize: 16,
         marginTop: 10,
         fontWeight: 'bold',
     },
+    stepContainer: {
+        paddingLeft: 15,
+        fontSize: 16,
+        marginTop: 10,
+    },
+    insContainer: {
+        paddingLeft: 15,
+        fontSize: 16,
+        marginTop: 10,
+    },
 });
 
-export default RecipePage;
+export default StepByStepScreen;
