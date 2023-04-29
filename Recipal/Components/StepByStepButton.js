@@ -1,16 +1,19 @@
 import { View, Text, StyleSheet, Image, ImageBackground, TouchableOpacity, TouchableHighlight, SafeAreaView } from "react-native";
 import { useNavigation } from '@react-navigation/native';
  
-const ProfileButton = () => {
+const NextStepButton = () => {
   const navigation = useNavigation()
+  function handlePress() {
+    navigation.navigate('Profile');
+  }
 
     return (
         <View style={styles.container}>
             <View style={styles.screen}>
-                <TouchableHighlight style={styles.buttonP}
+                <TouchableHighlight style={styles.buttonX}
                     underlayColor="rgba(255, 200, 0, 0.75)" //Downpress button
-                    onPress={()=> navigation.navigate('Profile')}>
-                    <Text>Profile</Text>
+                    onPress={handlePress}>
+                    <Text>Next Step</Text>
                 </TouchableHighlight>
             </View>
         </View>
@@ -25,14 +28,14 @@ const styles = StyleSheet.create({
         flex: 1,
         alignSelf: 'flex-end',
     },
-    buttonP:{
+    buttonX:{
         alignItems: 'center',
         justifyContent: 'center',
         borderTopStartRadius: 25,
         borderBottomLeftRadius: 25,
         bottom: 80,
         height: 50,
-        width: 60,
+        width: 80,
         backgroundColor: '#FFC800',
         shadowColor: 'black',
         shadowOffset: { width: 0, height: 2 },
@@ -42,4 +45,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default ProfileButton;
+export default NextStepButton;

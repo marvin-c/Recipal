@@ -7,6 +7,7 @@ import * as Font from 'expo-font';
 import CustomSideMenu from '../Components/SideMenu';
 import ProfileButton from '../Components/ProfileButton';
 import BackButton from '../Components/BackButton';
+import SideMenuButton from '../Components/SideMenuButton';
 
 const SearchScreen = ({ navigation }) => {
     const [fontLoaded, setFontLoaded] = useState(false);
@@ -149,9 +150,7 @@ const SearchScreen = ({ navigation }) => {
         </ScrollView>
         <ProfileButton />
         <BackButton />
-        <View style={styles.sideMenuContainer}>
-            <CustomSideMenu />
-        </View>
+        <SideMenuButton />
         </SafeAreaView>
         
     );
