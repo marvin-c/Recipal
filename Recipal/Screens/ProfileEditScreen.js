@@ -281,17 +281,18 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         height: 100,
         backgroundColor: '#FFFFFF',
+        alignItems: 'center',
       },
       allergyContainer: {   //food allergy icon container
         borderWidth: 1,
         borderColor: '#FFC800',
         borderRadius: 10,
-        height: 300,
+        height: 250,
         backgroundColor: '#FFFFFF',
         marginBottom: 110,
+        alignItems: 'stretch',
       },
-      iconWrapper: {    
-        flexDirection: 'row',
+      iconWrapper: {    //icon wrapper     
         flexWrap: 'wrap',
         justifyContent: 'space-around',
         alignItems: 'center',

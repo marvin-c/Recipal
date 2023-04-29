@@ -1,6 +1,9 @@
 import { View, Text, StyleSheet, Image, ImageBackground, TouchableOpacity, SafeAreaView } from "react-native";
 import { useNavigation } from '@react-navigation/native';
- 
+import SideMenuButton from "../Components/SideMenuButton";
+import BackButton from "../Components/BackButton";
+import SaveButton from "../Components/SaveButton"; 
+
 const UserRecipe = () => {
   const navigation = useNavigation()
 
@@ -9,7 +12,12 @@ const UserRecipe = () => {
                 <View>
                     <Text style={styles.buttonP}>User Recipe</Text>
                 </View>
+                <BackButton/>
+                <SaveButton/>
+                <SideMenuButton/>
+
         </SafeAreaView>
+
     );
 }
 

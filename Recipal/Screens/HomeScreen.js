@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import SearchBar from '../Components/SearchBar';
 import * as Font from 'expo-font';
-import CustomSideMenu from '../Components/SideMenu';
+import SideMenuButton from '../Components/SideMenuButton';
 import ProfileButton from '../Components/ProfileButton';
 import AddRecipe from '../Components/AddRecipe';
 
@@ -125,61 +125,58 @@ const HomeScreen = ({ navigation }) => {
           </View>
         </View>
       </ScrollView>
+
       <ProfileButton />  
       <AddRecipe />
-      <View style={styles.sideMenuContainer}>
-          <CustomSideMenu />
-      </View>
+      <SideMenuButton/>
+      
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  sideMenuContainer:{
-      flex: 1,
-      bottom: '79.5%'
-      },
-    overContainer: {
-      flex: 1,
-      backgroundColor: 'white'
-    },
-    header: {
-        paddingTop: 50,
-        paddingBottom: 10,
-        alignItems: 'center',
-    },
-    headerText: {
-        fontFamily: 'DancingScript-Regular',
-        fontWeight: '600',
-        fontSize: 40,
-        color: 'black',
-    },
-    searchText: {
-        fontFamily: 'System',
-        fontSize: 16,
-        color: 'gray',
-    },
-    subttlCointainer: {
-        paddingLeft: 15,
-        fontSize: 16,
-        marginTop: 10,
-        marginBottom: 15,
-    },
-    btn: {
-        marginTop: 15,
-        padding: 10,
-        left: 213,
-        backgroundColor: '#FFC800',
-        width: 130,
-        height: 40,
-        borderRadius: 20,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    btnText: {
-        fontSize: 16,
-        color: 'black',
-    },
+  
+  overContainer: {
+    flex: 1,
+    backgroundColor: 'white'
+  },
+  header: {
+      paddingTop: 50,
+      paddingBottom: 10,
+      alignItems: 'center',
+  },
+  headerText: {
+      fontFamily: 'DancingScript-Regular',
+      fontWeight: '600',
+      fontSize: 40,
+      color: 'black',
+  },
+  searchText: {
+      fontFamily: 'System',
+      fontSize: 16,
+      color: 'gray',
+  },
+  subttlCointainer: {
+      paddingLeft: 15,
+      fontSize: 16,
+      marginTop: 10,
+      marginBottom: 15,
+  },
+  btn: {
+      marginTop: 15,
+      padding: 10,
+      left: 213,
+      backgroundColor: '#FFC800',
+      width: 130,
+      height: 40,
+      borderRadius: 20,
+      justifyContent: 'center',
+      alignItems: 'center',
+  },
+  btnText: {
+      fontSize: 16,
+      color: 'black',
+  },
 });
 
 export default HomeScreen;

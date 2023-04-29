@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { SafeAreaView, View, Text, ScrollView, ImageBackground, StyleSheet, FlatList, Dimensions, Image} from 'react-native';
 import SearchBar from '../Components/SearchBar';
-import CustomSideMenu from '../Components/SideMenu';
+import SideMenuButton from '../Components/SideMenuButton';
 import ProfileButton from '../Components/ProfileButton';
 import HomeButton from '../Components/HomeButton';
 
@@ -56,14 +56,11 @@ const CategoriesScreen = () => {
         ListHeaderComponent={renderHeader}
         ListHeaderComponentStyle={styles.headerContainer}
       />
-    <View style={styles.sideMenuContainer}>
-        <CustomSideMenu />
-    </View>
-    <ProfileButton />
-    <HomeButton />
-      <View style={styles.sideMenuContainer}>
-        <CustomSideMenu />
-      </View>
+      
+      <ProfileButton />
+      <HomeButton />
+      <SideMenuButton/>
+      
     </SafeAreaView>
   );
 };
@@ -73,12 +70,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
   },
-  sideMenuContainer:{
-    flex: 1,
-    bottom: '78%'
-    },
   header: {
-    paddingTop: 50,
+    paddingTop: 40,
     paddingBottom: 10,
     alignItems: 'center',
   },

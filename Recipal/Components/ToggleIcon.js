@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     iconImage: {
       width: "100%",
       height: "100%",
-      resizeMode: "contain",
+      resizeMode: 'cover',
     },
     tickImage: {
       position: "absolute",
@@ -54,7 +54,8 @@ const styles = StyleSheet.create({
     label: {
       marginTop: 0, // Add space between the icon and the label
       fontSize: 12,
-      textAlign: 'center'
+      textAlign: 'center',
+      paddingLeft: 10,
     },
   });
 
