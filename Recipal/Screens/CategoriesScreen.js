@@ -56,14 +56,11 @@ const CategoriesScreen = () => {
         ListHeaderComponent={renderHeader}
         ListHeaderComponentStyle={styles.headerContainer}
       />
-    <View style={styles.sideMenuContainer}>
-        <CustomSideMenu />
-    </View>
-    <ProfileButton />
-    <HomeButton />
-      <View style={styles.sideMenuContainer}>
-        <CustomSideMenu />
-      </View>
+      
+      <ProfileButton />
+      <HomeButton />
+      <CustomSideMenu />
+      
     </SafeAreaView>
   );
 };
@@ -73,12 +70,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
   },
-  sideMenuContainer:{
-    flex: 1,
-    bottom: '78%'
-    },
   header: {
-    paddingTop: 50,
+    paddingTop: 40,
     paddingBottom: 10,
     alignItems: 'center',
   },

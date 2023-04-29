@@ -33,10 +33,10 @@ const CustomSideMenu = () => {
                     <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('Categories')}>
                       <Text style={styles.menuItemText}>Categories</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.menuItem} onPress={() => console.log('Menu item 3 pressed')}>
+                    <TouchableOpacity style={styles.menuItem} onPress={() => console.log('Menu item "Your Recipes" pressed')}>
                       <Text style={styles.menuItemText}>Your Recipes</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.menuItem} onPress={() => console.log('Menu item 3 pressed')}>
+                    <TouchableOpacity style={styles.menuItem} onPress={() => console.log('Menu item "favourites" pressed')}>
                       <Text style={styles.menuItemText}>Favorites</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('UserAgreement')}>
@@ -45,7 +45,7 @@ const CustomSideMenu = () => {
                     <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('AboutUs')}>
                       <Text style={styles.menuItemText}>About Us</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.logOutButton} onPress={() => console.log('Menu item 3 pressed')}>
+                    <TouchableOpacity style={styles.logOutButton} onPress={() => navigation.navigate('Splash')}>
                       <Text style={styles.menuItemText}>Log out</Text>
                     </TouchableOpacity>
                   </View>
@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
+        bottom: '79.5%'
     },
     buttonP:{
         alignSelf: 'flex-end',

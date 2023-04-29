@@ -84,13 +84,11 @@ const UserProfile = ({ navigation }) => {
         </View>
 
       </ScrollView>
-
-      <View style={styles.sidemenuContainer}>
-          <CustomSideMenu/>
-      </View> 
-
+      
       <HomeButton/>
       <PreferencesButton/>
+      <CustomSideMenu/>
+      
     </View>
   </View>
   );
@@ -124,10 +122,6 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     fontWeight: 'bold',
     fontSize: 18,
-  },
-  sidemenuContainer: {
-    flex: 1,
-    bottom: '90%',
   },
   //button text style properties
   buttonText: {

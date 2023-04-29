@@ -125,61 +125,58 @@ const HomeScreen = ({ navigation }) => {
           </View>
         </View>
       </ScrollView>
+
       <ProfileButton />  
       <AddRecipe />
-      <View style={styles.sideMenuContainer}>
-          <CustomSideMenu />
-      </View>
+      <CustomSideMenu />
+      
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  sideMenuContainer:{
-      flex: 1,
-      bottom: '79.5%'
-      },
-    overContainer: {
-      flex: 1,
-      backgroundColor: 'white'
-    },
-    header: {
-        paddingTop: 50,
-        paddingBottom: 10,
-        alignItems: 'center',
-    },
-    headerText: {
-        fontFamily: 'DancingScript-Regular',
-        fontWeight: '600',
-        fontSize: 40,
-        color: 'black',
-    },
-    searchText: {
-        fontFamily: 'System',
-        fontSize: 16,
-        color: 'gray',
-    },
-    subttlCointainer: {
-        paddingLeft: 15,
-        fontSize: 16,
-        marginTop: 10,
-        marginBottom: 15,
-    },
-    btn: {
-        marginTop: 15,
-        padding: 10,
-        left: 213,
-        backgroundColor: '#FFC800',
-        width: 130,
-        height: 40,
-        borderRadius: 20,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    btnText: {
-        fontSize: 16,
-        color: 'black',
-    },
+  
+  overContainer: {
+    flex: 1,
+    backgroundColor: 'white'
+  },
+  header: {
+      paddingTop: 50,
+      paddingBottom: 10,
+      alignItems: 'center',
+  },
+  headerText: {
+      fontFamily: 'DancingScript-Regular',
+      fontWeight: '600',
+      fontSize: 40,
+      color: 'black',
+  },
+  searchText: {
+      fontFamily: 'System',
+      fontSize: 16,
+      color: 'gray',
+  },
+  subttlCointainer: {
+      paddingLeft: 15,
+      fontSize: 16,
+      marginTop: 10,
+      marginBottom: 15,
+  },
+  btn: {
+      marginTop: 15,
+      padding: 10,
+      left: 213,
+      backgroundColor: '#FFC800',
+      width: 130,
+      height: 40,
+      borderRadius: 20,
+      justifyContent: 'center',
+      alignItems: 'center',
+  },
+  btnText: {
+      fontSize: 16,
+      color: 'black',
+  },
 });
 
 export default HomeScreen;
