@@ -2,7 +2,7 @@ import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import SearchBar from '../Components/SearchBar';
 import * as Font from 'expo-font';
-import CustomSideMenu from './SideMenu';
+import SideMenuButton from '../Components/SideMenuButton';
 import BackButton from './BackButton';
 
 const RecipePage = ({ navigation }) => {
@@ -16,7 +16,7 @@ const RecipePage = ({ navigation }) => {
                     </View>
                     <SearchBar />
                     <View>
-                        <CustomSideMenu />
+                        <SideMenuButton/>
                     </View>
 
 

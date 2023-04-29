@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { SafeAreaView, View, Text, ScrollView, ImageBackground, StyleSheet, FlatList, Dimensions, Image} from 'react-native';
 import SearchBar from '../Components/SearchBar';
-import CustomSideMenu from '../Components/SideMenu';
+import SideMenuButton from '../Components/SideMenuButton';
 import ProfileButton from '../Components/ProfileButton';
 import HomeButton from '../Components/HomeButton';
 
@@ -59,7 +59,7 @@ const CategoriesScreen = () => {
       
       <ProfileButton />
       <HomeButton />
-      <CustomSideMenu />
+      <SideMenuButton/>
       
     </SafeAreaView>
   );

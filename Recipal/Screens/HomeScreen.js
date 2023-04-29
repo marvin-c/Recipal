@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import SearchBar from '../Components/SearchBar';
 import * as Font from 'expo-font';
-import CustomSideMenu from '../Components/SideMenu';
+import SideMenuButton from '../Components/SideMenuButton';
 import ProfileButton from '../Components/ProfileButton';
 import AddRecipe from '../Components/AddRecipe';
 
@@ -128,7 +128,7 @@ const HomeScreen = ({ navigation }) => {
 
       <ProfileButton />  
       <AddRecipe />
-      <CustomSideMenu />
+      <SideMenuButton/>
       
     </SafeAreaView>
   );

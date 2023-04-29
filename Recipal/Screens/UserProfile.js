@@ -3,9 +3,8 @@ import { View, Text, Image, StyleSheet, TouchableOpacity, TouchableHighlight,Saf
 import CarouselCards from '../Components/CarouselCards';
 import { Pagination } from 'react-native-snap-carousel';
 import Data from '../Components/Data'; //carousel image data
-import { FontAwesome, Feather } from 'react-native-vector-icons';
-import SearchBar from '../Components/SearchBar';
 import CustomSideMenu from '../Components/SideMenu';
+import SideMenuButton from '../Components/SideMenuButton';
 import PreferencesButton from '../Components/PreferencesButton';
 import HomeButton from '../Components/HomeButton';
 import { ThemeContext } from '../Components/ThemeContext';
@@ -17,8 +16,6 @@ const UserProfile = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={{ backgroundColor: theme.colors.background }}>
-        
-      
 
       <ScrollView contentContainerStyle={styles.scrollContainer}>
 
@@ -87,7 +84,7 @@ const UserProfile = ({ navigation }) => {
       
       <HomeButton/>
       <PreferencesButton/>
-      <CustomSideMenu/>
+      <SideMenuButton/>
       
     </View>
   </View>
