@@ -88,16 +88,6 @@ const RecipePage = ({ navigation }) => {
                         <Text>Did you make this? Share your comments and rating</Text>
                     </View>
 
-                    <StarRating
-                        disabled={false}
-                        maxStars={5}
-                        rating={rating}
-                        selectedStar={(rating) => onStarRatingPress(rating)}
-                        starSize={40}
-                        fullStarColor="#ffc800"
-                        emptyStarColor="#ccc"
-                    />
-
                     <View style={styles.commentContainer}>
                         <ThemedText style={styles.commentTitle}>Post a comment:</ThemedText>
                         <TextInput
@@ -170,3 +160,14 @@ const styles = StyleSheet.create({
 });
 
 export default RecipePage;
+
+/*<StarRating
+    disabled={false}
+    maxStars={5}
+    rating={rating}
+    selectedStar={(rating) => onStarRatingPress(rating)}
+    starSize={40}
+    fullStarColor="#ffc800"
+    emptyStarColor="#ccc"
+/>
+ */
