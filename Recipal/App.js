@@ -21,6 +21,14 @@ import HomeButton from './Components/HomeButton';
 import {ThemeProvider} from './Components/ThemeContext';
 import StepByStepScreen from './Screens/StepByStepScreen';
 import NextStepButton from './Components/StepByStepButton';
+import StepOne  from './Screens/StepOne';
+import StepTwo from './Screens/StepTwo';
+import StepThree from './Screens/StepThree';
+import StepFour from './Screens/StepFour';
+import StepFive from './Screens/StepFIve';
+import StepSix from './Screens/StepSix';
+import StepSeven from './Screens/StepSeven';
+import DoneButton from './Components/DoneButton';
 
 
 const Stack = createStackNavigator();
@@ -123,6 +131,46 @@ const App = () => {
         <Stack.Screen
           name="NextStep"
           component={NextStepButton}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="StepOne"
+          component={StepOne}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="StepTwo"
+          component={StepTwo}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="StepThree"
+          component={StepThree}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="StepFour"
+          component={StepFour}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="StepFive"
+          component={StepFive}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="StepSix"
+          component={StepSix}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="StepSeven"
+          component={StepSeven}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="DoneButton"
+          component={DoneButton}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
