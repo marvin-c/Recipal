@@ -5,10 +5,17 @@ from .serializers import RecipeModelSerializer, CategoryModelSerializer
 
 
 # @csrf_exempt
+
+# Define a viewset for the Recipe model
 class RecipeViewSet(viewsets.ModelViewSet):
+    #  Define the queryset to use for the viewset
     queryset = Recipe.objects.all()
+    # Define the serializer class to use for the viewset
     serializer_class = RecipeModelSerializer
 
+# Define a viewset for the Category model
 class CategoryViewSet(viewsets.ModelViewSet):
+    # Define the queryset to use for the viewset
     queryset = Category.objects.all()
+    # Define the serializer class to use for the viewset
     serializer_class = CategoryModelSerializer
