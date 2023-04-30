@@ -21,11 +21,32 @@ const BackButton = () => {
     }
     if (route.name === 'StepByStep') {
       navigation.navigate('RecipePage');
-    }
-    if (route.name === 'UserRecipe') {
-      navigation.navigate('Home');
-    }
-  }
+   }
+   if (route.name === 'UserRecipe') {
+    navigation.navigate('Home');
+   }
+   if (route.name === 'StepOne') {
+    navigation.navigate('StepByStep');
+   }
+   if (route.name === 'StepTwo') {
+    navigation.navigate('StepOne');
+   }
+   if (route.name === 'StepThree') {
+    navigation.navigate('StepTwo');
+   }
+   if (route.name === 'StepFour') {
+    navigation.navigate('StepThree');
+   }
+   if (route.name === 'StepFive') {
+    navigation.navigate('StepFour');
+   }
+   if (route.name === 'StepSix') {
+    navigation.navigate('StepFive');
+   }
+   if (route.name === 'StepSeven') {
+    navigation.navigate('StepSix');
+   }
+}
 
   return (
     <View style={styles.container}>

@@ -1,23 +1,45 @@
 import { View, Text, StyleSheet, Image, ImageBackground, TouchableOpacity, TouchableHighlight, SafeAreaView } from "react-native";
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
  
 const NextStepButton = () => {
   const navigation = useNavigation()
-  function handlePress() {
-    navigation.navigate('Profile');
-  }
+  const route = useRoute();
 
-    return (
-        <View style={styles.container}>
-            <View style={styles.screen}>
-                <TouchableHighlight style={styles.buttonX}
-                    underlayColor="rgba(255, 200, 0, 0.75)" //Downpress button
-                    onPress={handlePress}>
-                    <Text>Next Step</Text>
-                </TouchableHighlight>
-            </View>
+  function handlePress() {
+    if (route.name === 'StepByStep') {
+      navigation.navigate('StepOne');
+    }
+    if (route.name === 'StepOne') {
+        navigation.navigate('StepTwo');
+    }
+    if (route.name === 'StepTwo') {
+        navigation.navigate('StepThree');
+    }
+    if (route.name === 'StepThree') {
+        navigation.navigate('StepFour');
+    }
+    if (route.name === 'StepFour') {
+        navigation.navigate('StepFive');
+    }
+    if (route.name === 'StepFive') {
+        navigation.navigate('StepSix');
+    }
+    if (route.name === 'StepSix') {
+        navigation.navigate('StepSeven');
+    }
+}
+
+return (
+    <View style={styles.container}>
+        <View style={styles.screen}>
+            <TouchableHighlight style={styles.buttonX}
+                underlayColor="rgba(255, 200, 0, 0.75)" //Downpress button
+                onPress={handlePress}>
+                <Text>Next Step</Text>
+            </TouchableHighlight>
         </View>
-    );
+    </View>
+);
 }
 
 const styles = StyleSheet.create({
