@@ -27,6 +27,15 @@ const Data = [  //This code contains the image file path arrays for the Carousel
       require('../assets/addrecipe.png'),
     ],
   },
+  {
+    id: 3,
+    title: 'Carousel 3',
+    images: [
+      require('../assets/redSnapper0.png'),
+      require('../assets/redSnapper1.jpg'),
+      require('../assets/redSnapper2.jpg'),
+    ],
+  },
 ];
 
 export default Data;
