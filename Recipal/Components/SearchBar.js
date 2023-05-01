@@ -6,31 +6,28 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 export default function SearchBar(){
     const navigation = useNavigation()
     return(
-        <View style={styles.assembler}>
         <View style={styles.Main}>
-            <TextInput placeholder='Search' style={styles.Input}></TextInput>
-            <View style={styles.buttonP}>
-            <TouchableOpacity onPress={()=> navigation.navigate('Search')}>
-                <Icon name='search' size={16} style={{transform: [{rotateY: '180deg'}]}}/>
-            </TouchableOpacity>
-            </View>
+        <TextInput placeholder='Search' style={styles.Input}></TextInput>
+        <View style={styles.buttonP}>
+        <TouchableOpacity onPress={()=> navigation.navigate('Search')}>
+            <Icon name='search' size={16} style={{transform: [{rotateY: '180deg'}]}}/>
+        </TouchableOpacity>
         </View>
-        </View>
+    </View>
     );
 }
 
 const styles = StyleSheet.create({
-    assembler:{
-        flexDirection: 'row',
-    },
+   
     Main:{
         left: 15,
         right: 55,
         backgroundColor: 'white',
-        width: 297,
+        marginTop: '0%',
+        width: '75%',
         height: 40,
-        borderWidth:0.2,
-        borderColor: '#000000',
+        borderWidth:1,
+        borderColor: 'black',
         borderRadius: 20,
     },
     Input:{
@@ -43,7 +40,7 @@ const styles = StyleSheet.create({
         height: 25,
         width: 25,
         backgroundColor: '#FFC800',
-        borderWidth:0.2,
+        borderWidth:1,
         borderColor: 'black',
         borderRadius: 60,
         alignItems: 'center',
