@@ -223,6 +223,7 @@ return (
 const styles = StyleSheet.create({
     container:{
         flex: 1, 
+        backgroundColor: 'white'
     },
     scrollContainer: {
         paddingHorizontal: 20, 
@@ -277,6 +278,7 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
       },
       dietContainer: {  //Dietary icon container
+        justifyContent:'center',
         borderWidth: 1,
         borderColor: '#FFC800',
         borderRadius: 10,

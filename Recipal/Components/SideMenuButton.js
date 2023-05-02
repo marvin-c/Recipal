@@ -27,12 +27,12 @@ const SideMenuButton = () => {
 const styles = StyleSheet.create({
   container: {
     position: 'absolute',
-    top: '13%', // adjust as needed
+    marginTop: '30%',
     right: '0%', // adjust as needed
     zIndex: 2, // ensure the button appears on top of other content
   },
   screen: {
-    paddingTop: 10,
+    marginTop: '0%',
   },
   buttonP:{
     alignItems: 'center',

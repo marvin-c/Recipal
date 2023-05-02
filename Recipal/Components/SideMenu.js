@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     height: 50,
     width: 175,
     backgroundColor: '#FFC800',
-    marginTop: 220,
+    marginTop: '80%',
     marginHorizontal: 15,
     alignSelf: 'stretch',
     justifyContent: 'center',
