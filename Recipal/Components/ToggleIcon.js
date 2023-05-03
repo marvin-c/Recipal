@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     },
     label: {
       marginTop: 0, // Add space between the icon and the label
-      fontSize: 12,
+      fontSize: 8,
       textAlign: 'center',
       paddingLeft: 10,
     },

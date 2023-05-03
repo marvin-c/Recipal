@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Text } from 'react-native';
 import { ThemeContext } from './ThemeContext';
 
+
 const ThemedTextBox = ({ children, style, ...props }) => {
   const { theme } = useContext(ThemeContext);
 
