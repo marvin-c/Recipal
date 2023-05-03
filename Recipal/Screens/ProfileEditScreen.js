@@ -280,7 +280,12 @@ const styles = StyleSheet.create({
       dietContainer: {  //Dietary icon container
         justifyContent:'center',
         borderWidth: 1,
-        borderColor: '#FFC800',
+        borderColor: '#ffc800',
+        shadowColor: 'black',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.8 ,
+        shadowRadius: 2,
+        elevation: 4,
         borderRadius: 10,
         height: 100,
         backgroundColor: '#FFFFFF',
@@ -288,7 +293,12 @@ const styles = StyleSheet.create({
       },
       allergyContainer: {   //food allergy icon container
         borderWidth: 1,
-        borderColor: '#FFC800',
+        borderColor: '#ffc800',
+        shadowColor: 'black',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.8 ,
+        shadowRadius: 2,
+        elevation: 4,
         borderRadius: 10,
         height: 250,
         backgroundColor: '#FFFFFF',
@@ -305,6 +315,7 @@ const styles = StyleSheet.create({
         width: 50,
         height: 50,
         margin: 5,
+        resizeMode: 'contain',
       },
 })
 

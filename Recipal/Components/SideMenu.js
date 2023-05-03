@@ -12,10 +12,11 @@ const CustomSideMenu = ({ onClose }) => {
 
   return (
     <View style={styles.container}>
+      <TouchableOpacity style={styles.closeButton} onPress={onClose}>
+        <Feather name="x" size={50} color="white" />
+      </TouchableOpacity>
+
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.closeButton} onPress={onClose}>
-          <Feather name="x" size={50} color="white" />
-        </TouchableOpacity>
         <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate('Profile')}>
           <Text style={styles.menuItemText}>Profile</Text>
         </TouchableOpacity>
@@ -59,31 +60,31 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     alignSelf: 'flex-end',
+    marginHorizontal: '-20%',
     width: '100%',
     marginVertical: '10%',
   },
   closeButton: {
-    paddingVertical: 10,
-    marginBottom: 10,
+    marginTop: '0%',
   },
   menuItem: {
     borderRadius: 20,
-    height: 50,
-    width: 175,
+    height: '7%',
+    width: '87.5%',
     backgroundColor: '#FFC800',
     marginVertical: 5,
-    marginHorizontal: 15,
+    marginHorizontal: 0,
     alignSelf: 'stretch',
     justifyContent: 'center',
     alignItems: 'center',
   },
   logOutButton: {
     borderRadius: 20,
-    height: 50,
-    width: 175,
+    height: '7%',
+    width: '87.5%',
     backgroundColor: '#FFC800',
     marginTop: '80%',
-    marginHorizontal: 15,
+    marginHorizontal: 0,
     alignSelf: 'stretch',
     justifyContent: 'center',
     alignItems: 'center',

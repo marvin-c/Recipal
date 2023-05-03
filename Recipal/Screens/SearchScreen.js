@@ -158,10 +158,11 @@ const SearchScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1,
         backgroundColor: 'white',
     },
     header: {
-        paddingTop: 50,
+        paddingTop: '10%',
         paddingBottom: 10,
         alignItems: 'center',
     },

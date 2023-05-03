@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { ImageBackground, Image, Button, TouchableOpacity,StyleSheet, SafeAreaView, ScrollView, Dimensions, View, Text, TextInput, TouchableHighlight,Alert,KeyboardAvoidingView,} from 'react-native';
 import * as Font from 'expo-font';  //font 
 import { FontAwesome, Feather } from 'react-native-vector-icons';
 import BackButton from '../Components/BackButton';
+import { ThemeContext } from '../Components/ThemeContext';
+import ThemedText from '../Components/ThemedText';
 
 const AboutUsScreen = ({ navigation }) => {
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
     <View style={styles.container}>
