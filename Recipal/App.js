@@ -37,7 +37,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <ThemeProvider>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="Splash">
         <Stack.Screen
           name="Splash"
           component={SplashScreen}

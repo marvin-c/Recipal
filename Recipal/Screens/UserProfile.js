@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, TouchableHighlight,SafeAreaView, ScrollView, } from 'react-native';
 import CarouselCards from '../Components/CarouselCards';
-import { Pagination } from 'react-native-snap-carousel';
 import Data from '../Components/Data'; //carousel image data
-import CustomSideMenu from '../Components/SideMenu';
 import SideMenuButton from '../Components/SideMenuButton';
 import PreferencesButton from '../Components/PreferencesButton';
 import HomeButton from '../Components/HomeButton';

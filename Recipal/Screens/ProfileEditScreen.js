@@ -252,7 +252,7 @@ const styles = StyleSheet.create({
     text: {
         textAlign: 'right',
         fontWeight: 'normal',
-        fontSize: 12,
+        fontSize: 8,
     },
      //input box styles
     inputContainer: {
@@ -303,13 +303,14 @@ const styles = StyleSheet.create({
         height: 250,
         backgroundColor: '#FFFFFF',
         marginBottom: 110,
-        alignItems: 'stretch',
+        alignItems: 'center',
       },
       iconWrapper: {    //icon wrapper     
         flexWrap: 'wrap',
+        flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',
-        padding: 5,
+        padding: 0,
       },
       icon: {
         width: 50,
