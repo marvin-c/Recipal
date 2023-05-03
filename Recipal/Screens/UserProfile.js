@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     flexDirection: 'row',
     justifyContent: 'center',
-    borderWidth: 2,
+    borderWidth: 1,
     borderColor: '#ffc800',
     shadowColor: 'black',
     shadowOffset: { width: 0, height: 2 },
