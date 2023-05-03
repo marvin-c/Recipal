@@ -39,7 +39,7 @@ const CategoriesScreen = () => {
       <View style={styles.header}>
         <Text style={styles.headerText}>Recipal</Text>
       </View>
-      <View style={{marginEnd: 70}}>
+      <View>
         <SearchBar />
       </View>
     </View>
@@ -47,6 +47,7 @@ const CategoriesScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
+
         <FlatList
         data={categories}
         renderItem={renderCategory}
@@ -71,11 +72,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   header: {
-    paddingTop: 40,
-    paddingBottom: 10,
-    alignItems: 'center',
-  },
-  headerContainer: {
+    paddingTop: '0%',
     paddingBottom: 10,
     alignItems: 'center',
   },
@@ -86,8 +83,8 @@ const styles = StyleSheet.create({
     color: 'black',
   },
   flatListContainer: {
-    paddingTop: 10,
-    paddingBottom: 100,
+    paddingTop: '10%',
+    paddingBottom: '20%',
   },
   category: {
     flex: 1,
@@ -98,9 +95,11 @@ const styles = StyleSheet.create({
     height: 120,
     flexDirection: 'column',
     alignItems: 'center'
+    
   },  
   categoryImageContainer: {
     flex: 1,
+    paddingTop: '15%',
     flexDirection: 'column',
     alignItems: 'center',
   },

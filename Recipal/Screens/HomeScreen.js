@@ -135,13 +135,12 @@ const HomeScreen = ({ navigation }) => {
 }
 
 const styles = StyleSheet.create({
-  
   overContainer: {
     flex: 1,
     backgroundColor: 'white'
   },
   header: {
-      paddingTop: 50,
+      paddingTop: '10%',
       paddingBottom: 10,
       alignItems: 'center',
   },
@@ -150,11 +149,6 @@ const styles = StyleSheet.create({
       fontWeight: '600',
       fontSize: 40,
       color: 'black',
-  },
-  searchText: {
-      fontFamily: 'System',
-      fontSize: 16,
-      color: 'gray',
   },
   subttlCointainer: {
       paddingLeft: 15,
